@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Colour the pictures with the O sound</title>
+        <link rel="stylesheet" href="https://books.knowledgewave.org/math-1/public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <style>
+            .page-container{
+                width: 100%;
+                height: auto;
+                position: relative;
+                display: block;
+                margin: auto;
+                overflow: hidden;
+            }
+            .backgroundImageContainer{
+                width: 100%;
+                height: auto;
+            }
+            #mice{
+                position: absolute;
+                top: -6%;
+                left: 0;
+                width: 6%;
+                height: 16vw;
+                padding-top: 8%;
+                cursor: pointer;
+            }
+            #mice img{
+                transform:rotateZ(45deg);
+            }
+            .validate-message {
+                position: absolute;
+                left: -40%;
+                bottom: 2%;
+                font-size: 3vw;
+                color: #27ae60;
+                width: 40%;
+                height: 6vw;
+                border: 2px solid #27ae60;
+                border-left-width: 10px;
+                display: flex;
+                align-items: center;
+                background-color: #FFF;
+                border-radius: 5px;
+                padding: 14px !important;
+            }
+            #valid-message-text{
+                padding-top: 15px;
+                padding-left: 7px;
+                font-weight: bold;
+            }
+            /* page content */
+            .page-content .circle-btn{
+                position: absolute;
+                width: 22%;
+                height: 33%; 
+                text-align: center;            
+                font-size: 6vw;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                background: transparent;
+            }
+            
+            .page-content .circle-btn:first-child{    
+                top: 0%;
+                left: 7.7%;
+                width: 76%;
+                height: 21%;
+            }
+            /* Fish */
+            .page-content .circle-btn:nth-child(2){
+                top: 20.1%;
+                left: 16%;
+                        
+            }
+            .page-content .circle-btn:nth-child(3){
+                top: 20.1%;
+                left: 39%;
+                        
+            }
+            .page-content .circle-btn:nth-child(4){            
+                top: 20.1%;
+                left: 62%;
+            }
+            .page-content .circle-btn:nth-child(5){
+                top: 57.1%;
+                left: 16%;
+            }
+            .page-content .circle-btn:nth-child(6){                       
+                top: 57.1%;
+                left: 39%;
+            }
+            .page-content .circle-btn:nth-child(7){             
+                top: 57.1%;
+                left: 62%;
+            }
+
+           
+           
+            .circle-btn #img-content{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0%;
+                left: 0;
+            }
+            .circle-btn input{
+                width: 72%;
+                height: 75%;
+                position: absolute;
+                top: 15%;
+                left: 16%;
+                text-align: center;
+                border: none;
+                border-radius: 6%;
+            }
+           
+            
+            @media only screen and (max-width: 768px) {
+                .backgroundImageContainer{
+                    height: 75vw;
+                }
+            }
+            @media only screen and (max-width: 600px) {
+                .backgroundImageContainer{
+                    height: 75vw;
+                }
+                #mice{
+                    padding-top: 8%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page-container">
+            <img src="images/1.png" alt="Background Image" class="backgroundImageContainer" />
+            <div id="mice">
+                <!-- Add A Shared Image Link -->
+                <img src="https://books.knowledgewave.org/math-1/public/images/megaphone.svg" alt="Mice" class="img-fluid">
+            </div>
+            <div class="page-content">
+                <div class="circle-btn" >
+                    <img id="img-content" class="img-fluid" src="images/2.png">
+                </div>
+           
+
+                <!-- fish -->
+                <div class="circle-btn image-replace"  forcounter="1" >
+                    <img id="img-content"  replaceTo="images/octopus-c.png" class="img-fluid" src="images/octopus.png">
+                    
+                </div>
+                <div class="circle-btn image-replace"  forcounter="1" >
+                    <img id="img-content"  replaceTo="images/fox-c.png" class="img-fluid" src="images/fox.png">
+                </div>
+                <div class="circle-btn image-replace"  forcounter="1" >
+                    <img id="img-content"  replaceTo="images/pot-c.png" class="img-fluid" src="images/pot.png">
+                </div>
+                <div class="circle-btn image-replace"  forcounter="1" >
+                    <img id="img-content"  replaceTo="images/log-c.png" class="img-fluid" src="images/log.png">
+                </div>
+                <div class="circle-btn image-replace"  forcounter="1" >
+                    <img id="img-content"  replaceTo="images/jog-c.png" class="img-fluid" src="images/jog.png">
+                </div>
+                <div class="circle-btn image-replace"  forcounter="2" >
+                    <img id="img-content"  replaceTo="images/bat-c.png" class="img-fluid" src="images/bat.png">
+                </div>
+
+
+
+              
+
+
+
+            </div>
+            <div class="validate-message px-2 py-2" id="validate-message">
+                <i id="like-icon" class="fas fa-thumbs-up"></i>
+                <p id="valid-message-text"> Good Jpb</p>
+            </div>
+        </div>
+        <script src="https://books.knowledgewave.org/math-1/public/js/jquery-3.2.1.min.js"></script>
+        <script src="https://books.knowledgewave.org/math-1/public/js/waveBooks.js"></script>
+        <script>
+            mice.addEventListener('click',()=>{
+            let initAudio = new Audio('Audio/Colour the pictures with the  O   sound.mp3');
+            initAudio.play();
+        })
+        let counter1 = 0;
+            let counter2 = 0;
+            document.querySelectorAll('.image-replace').forEach(image=>{
+                image.addEventListener('click',()=>{
+                    if (image.getAttribute('forcounter') === '1') {
+                        if (counter1 >= 12 ) {
+                            checkValidity(false)
+                        }else{
+                            if (image.childNodes[1].src !== image.childNodes[1].getAttribute('replaceTo')) {
+                                image.childNodes[1].src = image.childNodes[1].getAttribute('replaceTo');
+                                checkValidity(true)
+                                counter1 ++;   
+                            }
+                        }
+                    }else if(image.getAttribute('forcounter') === '2'){
+                        if (counter2 >= 0 ) {
+                            checkValidity(false)
+                        }else{
+                            image.childNodes[1].style.display = 'block';
+                            image.childNodes[1].src = image.childNodes[1].getAttribute('replaceTo');
+                            checkValidity(true)
+                            counter2 ++;
+                        }
+                    }
+                })
+            })
+     
+        </script>
+    </body>
+</html>

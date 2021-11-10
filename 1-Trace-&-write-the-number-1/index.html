@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+        <!-- Add A Shared Link For Styles -->
+        <title>Trace & write </title>
+        <link rel="stylesheet" href="https://books.knowledgewave.org/math-1/public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://books.knowledgewave.org/math-1/public/css/trace.css">
+    </head>
+
+    <body>
+
+
+
+
+            <div id="layerWidth" class="root">
+                <div id="mice">
+                    <!-- Add A Shared Image Link -->
+                    <img src="https://books.knowledgewave.org/math-1/public/images/megaphone.svg" alt="Mice" class="img-fluid">
+                </div>
+                <img class="img-fluid w-100" src="images/2.png">
+                <div id="container" >
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Add A Shared Link For Styles -->
+        <script src="https://books.knowledgewave.org/math-1/public/js/konva.min.js"></script>
+        <script src="https://books.knowledgewave.org/math-1/public/js/waveBooks.js"></script>
+        <!-- Script For Init Audio -->
+        <script>
+        /**
+         * Initial Audio Player
+         * 
+        */
+        mice.addEventListener('click',()=>{
+            let initAudio = new Audio('Audio/Trace and write the number 1.mp3');
+            initAudio.play();
+        })        
+        activePenTool({optionsContainer:'container',layerTool:'layerWidth'});
+
+        </script>
+    </body>
+</html>

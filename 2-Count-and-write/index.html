@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Count and write</title>
+        <link rel="stylesheet" href="https://books.knowledgewave.org/math-1/public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <style>
+            .page-container{
+                width: 100%;
+                height: auto;
+                position: relative;
+                display: block;
+                margin: auto;
+                overflow: hidden;
+            }
+            .backgroundImageContainer{
+                width: 100%;
+                height: auto;
+            }
+            #mice{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 6%;
+                height: 16vw;
+                padding-top: 3%;
+                cursor: pointer;
+            }
+            #mice img{
+                transform:rotateZ(45deg);
+            }
+            .validate-message {
+                position: absolute;
+                left: -40%;
+                bottom: 2%;
+                font-size: 3vw;
+                color: #27ae60;
+                width: 40%;
+                height: 6vw;
+                border: 2px solid #27ae60;
+                border-left-width: 10px;
+                display: flex;
+                align-items: center;
+                background-color: #FFF;
+                border-radius: 5px;
+                padding: 14px !important;
+            }
+            #valid-message-text{
+                padding-top: 15px;
+                padding-left: 7px;
+                font-weight: bold;
+            }
+            /* page content */
+            .page-content .circle-btn{
+                position: absolute;
+                width: 7.9%;
+                height: 10.3%;
+                border-radius: 31%;
+                background: transparent;
+                text-align: center;            
+                font-size: 6vw;
+                border: none;
+                outline: none;
+            }
+            .page-content .circle-btn input{
+                width: 100%;
+                height: 100%;
+                border: none;
+                border-radius: 33%;
+                text-align: center;
+                font-size: 40px;
+            }
+            .page-content .circle-btn:first-child{
+                top: 51.9%;
+                left: 26.9%;
+            }
+            .page-content .circle-btn:nth-child(2){
+                top: 74%;
+                left: 58.5%;
+            }
+            .page-content .circle-btn:nth-child(3){
+                top: 52%;
+                left: 87%;
+            }
+            
+            @media only screen and (max-width: 768px) {
+                .backgroundImageContainer{
+                    height: 75vw;
+                }
+            }
+            @media only screen and (max-width: 600px) {
+                .backgroundImageContainer{
+                    height: 75vw;
+                }
+                #mice{
+                    padding-top: 3%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page-container">
+            <img src="images/1-2.png" alt="Background Image" class="backgroundImageContainer" />
+            <div id="mice">
+                <!-- Add A Shared Image Link -->
+                <img src="https://books.knowledgewave.org/math-1/public/images/megaphone.svg" alt="Mice" class="img-fluid">
+            </div>
+            <div class="page-content">
+                
+                    <input class="circle-btn"  validValue="1" >
+                    <input class="circle-btn"  validValue="1" >
+                    <input class="circle-btn"  validValue="1" >
+                
+            </div>
+            <div class="validate-message px-2 py-2" id="validate-message">
+                <i id="like-icon" class="fas fa-thumbs-up"></i>
+                <p id="valid-message-text"> Good Jpb</p>
+            </div>
+        </div>
+        <script src="https://books.knowledgewave.org/math-1/public/js/jquery-3.2.1.min.js"></script>
+        <script src="https://books.knowledgewave.org/math-1/public/js/waveBooks.js"></script>
+        <script>
+            mice.addEventListener('click',()=>{
+            let initAudio = new Audio('Audio/Count and write.mp3');
+            initAudio.play();
+        })
+        initValidation('.circle-btn')
+            // add custome effect 
+           
+        </script>
+    </body>
+</html>

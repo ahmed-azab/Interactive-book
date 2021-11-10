@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Count & Color</title>
+        <link rel="stylesheet" href="https://books.knowledgewave.org/math-1/public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <style>
+            .page-container{
+                width: 100%;
+                height: auto;
+                position: relative;
+                display: block;
+                margin: auto;
+                overflow: hidden;
+            }
+            .backgroundImageContainer{
+                width: 100%;
+                height: auto;
+            }
+            #mice{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 6%;
+                height: 16vw;
+                padding-top: 5%;
+                cursor: pointer;
+            }
+            #mice img{
+                transform:rotateZ(45deg);
+            }
+            .validate-message {
+                position: absolute;
+                left: -40%;
+                bottom: 2%;
+                font-size: 3vw;
+                color: #27ae60;
+                width: 40%;
+                height: 6vw;
+                border: 2px solid #27ae60;
+                border-left-width: 10px;
+                display: flex;
+                align-items: center;
+                background-color: #FFF;
+                border-radius: 5px;
+                padding: 14px !important;
+            }
+            #valid-message-text{
+                padding-top: 15px;
+                padding-left: 7px;
+                font-weight: bold;
+            }
+            /* page content */
+            .page-content .image-replace{
+                position: absolute;
+                width: 7.5%;
+                height: 10%;
+                text-align: center;
+                background-color: transparent;
+                font-size: 6vw;
+                border: none;
+                outline: none;
+            }
+            .page-content .image-replace:first-child{
+                top: 37.5%;
+                left: 9.5%;
+                width: 21%;
+                height: 40%;
+            }
+            .page-content .image-replace:nth-child(2){
+                top: 37.5%;
+                left: 34.7%;
+                width: 23.5%;
+                height: 37%;
+            }
+            .page-content .image-replace:nth-child(3){
+                top: 33.5%;
+                left: 62.7%;
+                width: 30%;
+                height: 41%;
+            }
+            .page-content .image-replace img{
+                display: none;
+                /* position: relative; */
+                /* z-index: 986468; */
+            }
+            .text-box{
+                position: absolute;
+                width: 54.5%;
+                height: 35%;
+                text-align: center;
+                background-color: transparent;
+                font-size: 6vw;
+                border: none;
+                outline: none;
+            }
+            .text-box1{
+                top: 98.5%;
+                left: 27.5%;
+            }
+            .text-box2{
+                top: 106.5%;
+                left: 31.5%;
+                width: 49%;
+                height: 38%;
+            }
+            .text-box3{
+                top: 106.5%;
+                left: 23.5%;
+                width: 38%;
+                height: 34%;
+            }
+            @media only screen and (max-width: 768px) {
+                .backgroundImageContainer{
+                    height: 75vw;
+                }
+            }
+            @media only screen and (max-width: 600px) {
+                .backgroundImageContainer{
+                    height: 75vw;
+                }
+                #mice{
+                    padding-top: 4%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page-container">
+            <img src="images/3.jpg" alt="Background Image" class="backgroundImageContainer" />
+            <div id="mice">
+                <!-- Add A Shared Image Link -->
+                <img src="https://books.knowledgewave.org/math-1/public/images/megaphone.svg" alt="Mice" class="img-fluid">
+            </div>
+            <div class="page-content">
+                <div class="image-replace">
+                    <img id="plane-img image-toggle" src="images/Ex-11.png" class="imageToReplace w-100 h-100" replaceTo="images/Ex-11.png">
+                    <input type="text" class="text-box text-box1" validValue="1">
+                </div>
+                <div class="image-replace">
+                    <img id="plane-img image-toggle" src="images/Ex-13.png" class="imageToReplace w-100 h-100" replaceTo="images/Ex-11.png">
+                    <input type="text" class="text-box text-box2" validValue="1">
+                </div>
+                <div class="image-replace">
+                    <img id="plane-img image-toggle" src="images/Ex-15.png" class="imageToReplace w-100 h-100" replaceTo="images/Ex-11.png">
+                    <input type="text" class="text-box text-box3" validValue="1">
+                </div>
+            </div>
+            <div class="validate-message px-2 py-2" id="validate-message">
+                <i id="like-icon" class="fas fa-thumbs-up"></i>
+                <p id="valid-message-text"> Good Jpb</p>
+            </div>
+        </div>
+        <script src="https://books.knowledgewave.org/math-1/public/js/jquery-3.2.1.min.js"></script>
+        <script src="https://books.knowledgewave.org/math-1/public/js/waveBooks.js"></script>
+        <script>
+            mice.addEventListener('click',()=>{
+            let initAudio = new Audio('Audio/Count and colour.mp3');
+            initAudio.play();
+        })
+            initValidation('.text-box')
+            document.querySelectorAll('.image-replace').forEach(image=>{
+                console.log(image);
+                image.addEventListener('click',()=>{
+                    image.childNodes[1].style.display = 'block';
+                })
+            })
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://books.knowledgewave.org/math-1/public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+       <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+ 
+        
+        <div class="containner"> 
+
+            <!-- this element is root of everything in it like images and inputs   -->
+            
+            <!-- <div class="cloud-img">  -->
+                <!-- open tag root elemnt  -->
+
+                <!-- this image is background of task , it has the same width like root element -->
+                <!-- <img id="" class="img-fluid" src="images/Ex-07.png"> -->
+
+                <!-- this element is another layer on root element used posation to put it in this place 
+                it’s not has background untile the root element background show  its color is yallow
+                -->
+                <!-- <div class="layer-one"> -->
+                    <!-- open layer tag   -->
+
+
+                    <!-- this elemnt has image of cont and write and voluam icon -->
+                    <!-- <div class="row"> -->
+                         <!-- open elemnt for voluam icon and cont & write image   -->
+                        <!-- <div class="col">
+                            <div  id="mice" class="Cw-words d-flex">
+                                <img src="https://books.knowledgewave.org/math-1/public/images/megaphone.svg" alt="Mice" class="img-fluid mice-img">
+                                <img src="images/Ex-08.png">
+                            </div>
+                        </div>
+                        <div class="col"></div> -->
+                    <!-- </div>  -->
+                    <!-- end elemnt for voluam icon and cont & write image   -->
+
+
+                    <!-- this elemnt has images plane,watermelon,Leaf and inputs -->
+                    <!-- <div class="row"> -->
+                        <!-- this open tag for plane,watermelon,Leaf and inputs  -->
+                        <!-- <div class="col-4">
+                            <div class="plane">
+                                <img id="plane-img" src="images/Ex-10.png" class="imageToReplace" replaceTo="images/Ex-11.png">
+                                <input type="text" class="text-box" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="watermelon">
+                                <img id="watermelon-img" src="images/Ex-12.png" class="imageToReplace" replaceTo="images/Ex-13.png">
+                                <input type="text" class="text-box" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="Leaf">
+                                <img id="Leaf-img" src="images/Ex-14.png" class="imageToReplace" replaceTo="images/Ex-15.png">
+                                <input type="text" class="text-box" autocomplete="off">
+                            </div>
+                        </div> -->
+                    <!-- </div>  -->
+                    <!-- this end tag for plane,watermelon,Leaf and inputs  -->
+
+
+
+                    <!-- <div class="validate-message px-2" id="validate-message">
+                        <i id="like-icon" class="fas fa-thumbs-up"></i>
+                        <p id="valid-message-text"></p>
+                    </div> -->
+
+                <!-- </div> -->
+                <!-- end layer tag   -->
+
+            <!-- </div>  -->
+            <!-- end tag root elemnt  -->
+
+        <!-- </div>  -->
+
+        <!-- <script src="https://books.knowledgewave.org/math-1/public/js/jquery-3.2.1.min.js"></script>
+        <script src="https://books.knowledgewave.org/math-1/public/js/bootstrap.min.js"></script> -->
+        <script>
+        //     let myAudio = new Audio('Audio/Count and colour.mp3');
+        // myAudio.play();
+        // mice.addEventListener('click',()=>{
+        //     myAudio.play();
+        // })
+//         document.querySelectorAll('.imageToReplace').forEach(image=>{
+//             image.addEventListener('click',()=>{
+//                 let newSrc = image.getAttribute('replaceTo');
+//                 image.src = newSrc;
+//             })
+//         })
+
+
+//         document.querySelectorAll('.text-box').forEach((elem)=>{
+//             elem.addEventListener('input',(e)=>{
+//                 if (elem.value == 1) {
+//                     checkValidity(true)  
+//                 }else{
+//                     checkValidity(false)
+//                 }
+//             })
+//         })
+        
+// const checkValidity = message =>{
+//     if (message === true) {
+//         const items =  [
+//             'https://books.knowledgewave.org/math-1/public/audio/Excellent.mp3' ,
+//             'https://books.knowledgewave.org/math-1/public/audio/Good job.mp3',
+//             'https://books.knowledgewave.org/math-1/public/audio/Super genius.mp3',
+//             ];
+//             let randomNumb = Math.floor(Math.random() * 3);
+//             var item = items[randomNumb];
+//             const itemsMessage =  [
+//             'Excellent' ,
+//             'Good job',
+//             'Super genius'
+//             ];
+//             var itemMessage = itemsMessage[randomNumb];
+//             document.getElementById('valid-message-text').textContent = itemMessage;
+//             document.getElementById('validate-message').style.color = '#27ae60' ;
+//             document.getElementById('validate-message').style.borderColor = '#27ae60' ;
+
+//             document.getElementById('like-icon').classList = 'fas fa-thumbs-up' ;
+//             $("#validate-message").animate({left: '10px'});
+//             var audio = new Audio(item);
+//             audio.play()  
+//     }else if(message === false){
+//         document.getElementById('validate-message').style.color = '#c0392b' ;
+//         document.getElementById('valid-message-text').textContent = 'Please, try again';
+//         document.getElementById('valid-message-text').style.fontSize = '20px';
+//         document.getElementById('validate-message').style.borderColor = '#c0392b' ;
+//         document.getElementById('like-icon').classList = 'fas fa-thumbs-down' ;
+//         $("#validate-message").animate({left: '10px'});
+//         var audio = new Audio('https://books.knowledgewave.org/math-1/public/audio/Please, try again.mp3');
+//         audio.play()   
+//         }
+//     }
+    
+        </script>
+    <!-- </body> -->
+<!-- </html -->

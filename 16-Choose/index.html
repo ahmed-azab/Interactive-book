@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Choose</title>
+        <link rel="stylesheet" href="https://books.knowledgewave.org/math-1/public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <style>
+            .page-container{
+                width: 100%;
+                height: auto;
+                position: relative;
+                display: block;
+                margin: auto;
+                overflow: hidden;
+            }
+            .backgroundImageContainer{
+                width: 100%;
+                height: auto;
+            }
+            #mice{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 6%;
+                height: 16vw;
+                padding-top: 6.5%;
+                cursor: pointer;
+            }
+            #mice img{
+                transform:rotateZ(45deg);
+            }
+            .validate-message {
+                position: absolute;
+                left: -40%;
+                bottom: 2%;
+                font-size: 3vw;
+                color: #27ae60;
+                width: 40%;
+                height: 6vw;
+                border: 2px solid #27ae60;
+                border-left-width: 10px;
+                display: flex;
+                align-items: center;
+                background-color: #FFF;
+                border-radius: 5px;
+                padding: 14px !important;
+            }
+            #valid-message-text{
+                padding-top: 15px;
+                padding-left: 7px;
+                font-weight: bold;
+            }
+            /* page content */
+            .page-content .circle-btn{
+                position: absolute;
+                width: 6.5%;
+                height: 9.3%;
+                border-radius: 33%;
+                background: transparent;
+                text-align: center;            
+                font-size: 6vw;
+                border: none;
+                outline: none;
+                cursor: pointer;
+            }
+            
+            .page-content .circle-btn:first-child{    
+                top: 44%;
+                left: 9.7%;
+            }
+            .page-content .circle-btn:nth-child(2){
+                top: 44%;
+                left: 18.9%;
+            }
+            .page-content .circle-btn:nth-child(3){        
+                top: 44%;
+                left: 31.5%;
+            }
+            .page-content .circle-btn:nth-child(4){    
+                top: 44%;
+                left: 40.8%;
+            }
+            .page-content .circle-btn:nth-child(5){
+                top: 73%;
+                left: 52%;
+            }
+            .page-content .circle-btn:nth-child(6){
+                top: 73%;
+                left: 61.2%;
+            }
+            .page-content .circle-btn:nth-child(7){
+                top: 73%;
+                left: 72.9%;
+            }
+            .page-content .circle-btn:nth-child(8){
+                top: 73%;
+                left: 82.1%;
+            }
+            
+            @media only screen and (max-width: 768px) {
+                .backgroundImageContainer{
+                    height: 75vw;
+                }
+            }
+            @media only screen and (max-width: 600px) {
+                .backgroundImageContainer{
+                    height: 75vw;
+                }
+                #mice{
+                    padding-top:5.5%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page-container">
+            <img src="images/s.png" alt="Background Image" class="backgroundImageContainer" />
+            <div id="mice">
+                <!-- Add A Shared Image Link -->
+                <img src="https://books.knowledgewave.org/math-1/public/images/megaphone.svg" alt="Mice" class="img-fluid">
+            </div>
+            <div class="page-content">
+                <div class="circle-btn"  validValue="false">
+                    
+                </div>
+                <div class="circle-btn"  validValue="true">
+                    
+                </div>
+                <div class="circle-btn"  validValue="false">
+                    
+                </div>
+                <div class="circle-btn"  validValue="true">
+                    
+                </div>
+                <div class="circle-btn"  validValue="true">
+                    
+                </div>
+                <div class="circle-btn"  validValue="false">
+                    
+                </div>
+                <div class="circle-btn"  validValue="true">
+                    
+                </div>
+                <div class="circle-btn"  validValue="false">
+                    
+                </div>
+               
+                
+            </div>
+            <div class="validate-message px-2 py-2" id="validate-message">
+                <i id="like-icon" class="fas fa-thumbs-up"></i>
+                <p id="valid-message-text"> Good Jpb</p>
+            </div>
+        </div>
+        <script src="https://books.knowledgewave.org/math-1/public/js/jquery-3.2.1.min.js"></script>
+        <script src="https://books.knowledgewave.org/math-1/public/js/waveBooks.js"></script>
+        <script>
+            mice.addEventListener('click',()=>{
+            let initAudio = new Audio('Audio/Choose.mp3');
+            initAudio.play();
+        })
+        initChoose('.circle-btn')
+            // add custome effect 
+            let Btns = document.querySelectorAll('.circle-btn');
+            Btns.forEach(btn=>{
+                btn.addEventListener('click',()=>{
+                    btn.getAttribute('validValue') == 'true' 
+                    ?
+                    btn.style.backgroundColor = '#2592217a'
+                    :
+                    btn.style.backgroundColor = '#bb0f0f7a'
+                })
+            })
+        </script>
+    </body>
+</html>

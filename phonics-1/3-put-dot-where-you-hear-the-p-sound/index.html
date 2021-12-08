@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Put a dot where you are hear the p sound</title>
+        <link rel="stylesheet" href="https://books.knowledgewave.org/math-1/public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <style>
+            .page-container{
+                width: 100%;
+                height: auto;
+                position: relative;
+                display: block;
+                margin: auto;
+                overflow: hidden;
+            }
+            .backgroundImageContainer{
+                width: 100%;
+                height: auto;
+            }
+            #mice{
+                position: absolute;
+                top: -4%;
+                left: 0;
+                width: 6%;
+                height: 16vw;
+                padding-top: 8%;
+                cursor: pointer;
+            }
+            #mice img{
+                transform:rotateZ(45deg);
+            }
+            .validate-message {
+                position: absolute;
+                left: -40%;
+                bottom: 2%;
+                font-size: 3vw;
+                color: #27ae60;
+                width: 40%;
+                height: 6vw;
+                border: 2px solid #27ae60;
+                border-left-width: 10px;
+                display: flex;
+                align-items: center;
+                background-color: #FFF;
+                border-radius: 5px;
+                padding: 14px !important;
+            }
+            #valid-message-text{
+                padding-top: 15px;
+                padding-left: 7px;
+                font-weight: bold;
+            }
+            /* page content */
+            .page-content .circle-btn{
+                position: absolute;
+                width: 5.8%;
+                height: 7.7%;
+                border-radius: 59%;    
+                text-align: center;            
+                font-size: 6vw;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                background: transparent;
+            }
+            /* frist */
+            .page-content .circle-btn:first-child{    
+                top: 49.4%;
+                left: 7.7%;
+            }
+            .page-content .circle-btn:nth-child(2){              
+                top: 49.4%;
+                left: 22.7%;
+            }
+
+            /* second */
+            .page-content .circle-btn:nth-child(3){              
+            
+                top: 49.4%;
+                left: 40.9%;
+
+            }
+            .page-content .circle-btn:nth-child(4){
+                top: 49.4%;
+                left: 56%;
+            }
+
+            /* book */
+            .page-content .circle-btn:nth-child(5){              
+                top: 49.4%;
+                left: 72%;
+            }
+            .page-content .circle-btn:nth-child(6){
+                top: 49.4%;
+                left: 86.9%;
+            }
+
+
+            /* ball */
+            .page-content .circle-btn:nth-child(7){              
+                top: 88.8%;
+                left: 7.7%;
+            }
+            .page-content .circle-btn:nth-child(8){            
+                top: 88.8%;
+                left: 22.7%;
+            }
+
+
+             /* box */
+             .page-content .circle-btn:nth-child(9){              
+                top: 88.8%;
+                left: 41%;
+            }
+            .page-content .circle-btn:nth-child(10){
+                top: 88.8%;
+                left: 56%;
+            }
+
+
+            /* bed */
+            .page-content .circle-btn:nth-child(11){                         
+                
+                top: 88.8%;
+                left: 72%;
+
+            }
+            .page-content .circle-btn:nth-child(12){
+                
+                top: 88.8%;
+                left: 86.9%;
+
+            }
+            .eleTogel img{
+                position: absolute;
+                top: 19%;
+                left: 17%;
+                width: 65%;
+            }
+            
+            /* sounds to listen */
+            .page-content .circle-audio:nth-child(13){
+                position: absolute;
+                top: 19%;
+                left: 7.5%;
+                background: transparent;
+                width: 21%;
+                height: 29%;
+                border-radius: unset;
+            }
+            .page-content .circle-audio:nth-child(14){
+                position: absolute;
+                top: 19%;
+                left: 40.5%;
+                background: transparent;
+                width: 21%;
+                height: 29%;
+                border-radius: unset;
+            }
+            .page-content .circle-audio:nth-child(15){
+                position: absolute;
+                top: 19%;
+                left: 71.4%;
+                background: transparent;
+                width: 21%;
+                height: 29%;
+                border-radius: unset;
+            }
+            .page-content .circle-audio:nth-child(16){
+                position: absolute;
+                top: 59.6%;
+                left: 7.5%;
+                background: transparent;
+                width: 21%;
+                height: 28.5%;
+                border-radius: unset;
+            }
+            .page-content .circle-audio:nth-child(17){
+                position: absolute;
+                top: 59.6%;
+                left: 40.6%;
+                background: transparent;
+                width: 21%;
+                height: 28.5%;
+                border-radius: unset;
+            }
+            .page-content .circle-audio:nth-child(18){
+                position: absolute;
+                top: 59.6%;
+                left: 71.6%;
+                background: transparent;
+                width: 21%;
+                height: 28.5%;
+                border-radius: unset;
+            }
+
+            #green{
+                position: absolute;
+                font-size: 80%;
+                top: 9%;
+                color: green;
+                left: 8%;
+           }
+           #red{
+                position: absolute;
+                font-size: 80%;
+                top: 9%;
+                color: red;
+                left: 9%;
+           }
+            
+            @media only screen and (max-width: 768px) {
+                .backgroundImageContainer{
+                    height: 75vw;
+                }
+            }
+            @media only screen and (max-width: 600px) {
+                .backgroundImageContainer{
+                    height: 75vw;
+                }
+                #mice{
+                    padding-top: 8%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page-container">
+            <img src="images/1.png" alt="Background Image" class="backgroundImageContainer" />
+            <div id="mice">
+                <!-- Add A Shared Image Link -->
+                <img src="https://books.knowledgewave.org/math-1/public/images/megaphone.svg" alt="Mice" class="img-fluid">
+            </div>
+            <div class="page-content">
+                <!-- frist -->
+                <div class="circle-btn eleTogel"  validValue="false">
+                    
+                </div>
+                <div class="circle-btn eleTogel"  validValue="true">
+                    
+                </div>
+
+                <!-- second -->
+                <div class="circle-btn eleTogel"  validValue="true">
+                    
+                </div>
+                <div class="circle-btn eleTogel"  validValue="false">
+                    
+                </div>
+                
+                <!-- book -->
+                <div class="circle-btn eleTogel"  validValue="true">
+                    
+                </div>
+                <div class="circle-btn eleTogel"  validValue="false">
+                    
+                </div>
+
+                <!-- ball -->
+                <div class="circle-btn eleTogel"  validValue="true">
+                    
+                </div>
+                <div class="circle-btn eleTogel"  validValue="false">
+                    
+                </div>
+
+
+                 <!-- box -->
+                 <div class="circle-btn eleTogel"  validValue="true">
+                    
+                </div>
+                <div class="circle-btn eleTogel"  validValue="false">
+                    
+                </div>
+
+                <!-- bed -->
+                <div class="circle-btn eleTogel"  validValue="false">
+                    
+                </div>
+                <div class="circle-btn eleTogel"  validValue="true">
+                    
+                </div>
+
+                  <!-- sounds to litsen -->
+                  <div id="Harp" class="circle-audio" >
+                   
+                </div>
+                <div id="penguin" class="circle-audio" >
+                   
+                </div>
+                <div id="pot" class="circle-audio" >
+                   
+                </div>
+                <div id="piano" class="circle-audio" >
+                   
+                </div>
+                <div id="pet" class="circle-audio" >
+                   
+                </div>
+                <div id="cupp" class="circle-audio" >
+                   
+                </div>
+                
+            </div>
+            <div class="validate-message px-2 py-2" id="validate-message">
+                <i id="like-icon" class="fas fa-thumbs-up"></i>
+                <p id="valid-message-text"> Good Jpb</p>
+            </div>
+        </div>
+        <script src="https://books.knowledgewave.org/math-1/public/js/jquery-3.2.1.min.js"></script>
+        <script src="https://books.knowledgewave.org/math-1/public/js/waveBooks.js"></script>
+        <script>
+            mice.addEventListener('click',()=>{
+            let initAudio = new Audio('Audio/Put a dot where you hear the   P  sound.mp3');
+            initAudio.play();
+        })
+       
+            // add custome effect 
+            document.querySelectorAll('.eleTogel').forEach(
+                item=>{
+                    item.addEventListener('click',function(){
+                        if(item.getAttribute('validValue') == "true"){
+                            checkValidity (true) 
+                            item.innerHTML = "<i id='green' class='fas fa-circle' ></i>";
+                        }else if (item.getAttribute("validValue") == "false"){
+                            checkValidity(false)
+                            item.innerHTML = "<i id='red' class='fas fa-circle' ></i>";
+                            setTimeout(function() {
+                                    item.innerHTML="";}, 2000);
+                        }
+                    
+
+                    })
+                }
+            )
+
+            Harp.addEventListener('click',()=>{
+            let testSou = new Audio('Audio/Harp.mp3');
+            testSou.play();
+            })
+            penguin.addEventListener('click',()=>{
+                let testSou = new Audio('Audio/penguin.mp3');
+                testSou.play();
+            })
+            pot.addEventListener('click',()=>{
+                let testSou = new Audio('Audio/pot.mp3');
+                testSou.play();
+            })
+
+            piano.addEventListener('click',()=>{
+            let testSou = new Audio('Audio/piano.mp3');
+            testSou.play();
+            })
+            pet.addEventListener('click',()=>{
+                let testSou = new Audio('Audio/pet.mp3');
+                testSou.play();
+            })
+            cupp.addEventListener('click',()=>{
+                let testSou = new Audio('Audio/cupp.mp3');
+                testSou.play();
+            })
+        </script>
+    </body>
+</html>

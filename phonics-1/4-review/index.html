@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Say the name of each picture then choose the right  letter stands for the sound</title>
+        <link rel="stylesheet" href="https://books.knowledgewave.org/math-1/public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <style>
+            .page-container{
+                width: 100%;
+                height: auto;
+                position: relative;
+                display: block;
+                margin: auto;
+                overflow: hidden;
+            }
+            .backgroundImageContainer{
+                width: 100%;
+                height: auto;
+            }
+            #mice{
+                position: absolute;
+                top: 7%;
+                left: 0;
+                width: 6%;
+                height: 16vw;
+                padding-top: 8%;
+                cursor: pointer;
+            }
+            #mice img{
+                transform:rotateZ(45deg);
+            }
+            .validate-message {
+                position: absolute;
+                left: -40%;
+                bottom: 2%;
+                font-size: 3vw;
+                color: #27ae60;
+                width: 40%;
+                height: 6vw;
+                border: 2px solid #27ae60;
+                border-left-width: 10px;
+                display: flex;
+                align-items: center;
+                background-color: #FFF;
+                border-radius: 5px;
+                padding: 14px !important;
+            }
+            #valid-message-text{
+                padding-top: 15px;
+                padding-left: 7px;
+                font-weight: bold;
+            }
+            /* page content */
+            .page-content .circle-btn{
+                position: absolute;
+                width: 5.7%;
+                height: 3.9%;
+                border-radius: 59%;    
+                text-align: center;            
+                font-size: 6vw;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                background: transparent;
+            }
+            /* ball */
+            .page-content .circle-btn:first-child{    
+                top: 28.6%;
+                left: 10.1%;
+            }
+            .page-content .circle-btn:nth-child(2){              
+                top: 33.6%;
+                left: 10.2%;
+            }
+
+            /* shmsea */
+            .page-content .circle-btn:nth-child(3){                      
+                top: 28.6%;
+                left: 33.9%;
+            }
+            .page-content .circle-btn:nth-child(4){
+                top: 33.6%;
+                left: 34%;
+            }
+
+            /* music */
+            .page-content .circle-btn:nth-child(5){                                          
+                top: 28.6%;
+                left: 56.4%;
+            }
+            .page-content .circle-btn:nth-child(6){
+                top: 33.6%;
+                left: 56.4%;
+            }
+
+
+            /* tasa */
+            .page-content .circle-btn:nth-child(7){              
+                top: 28.6%;
+                left: 77.5%;
+            }
+            .page-content .circle-btn:nth-child(8){            
+                top: 33.7%;
+                left: 77.4%;
+            }
+
+
+             /* camel */
+             .page-content .circle-btn:nth-child(9){              
+                top: 47.1%;
+                left: 10%;
+
+            }
+            .page-content .circle-btn:nth-child(10){
+                top: 52.1%;
+                left: 10%;
+            }
+
+
+            /* qpa3a */
+            .page-content .circle-btn:nth-child(11){                                         
+                top: 47.1%;
+                left: 34%;
+            }
+            .page-content .circle-btn:nth-child(12){
+                
+                top: 52.1%;
+                left: 33.9%;
+
+            }
+            /* pen */
+            .page-content .circle-btn:nth-child(13){                                         
+                top: 47.1%;
+                left: 56.5%;
+            }
+            .page-content .circle-btn:nth-child(14){              
+                top: 52.1%;
+                left: 56.4%;
+            }
+            /* panua */
+            .page-content .circle-btn:nth-child(15){                                         
+                top: 47.1%;
+                left: 77.4%;
+            }
+            .page-content .circle-btn:nth-child(16){         
+                top: 52.1%;
+                left: 77.4%;
+                
+            }
+
+             /* nose */
+             .page-content .circle-btn:nth-child(17){                                         
+                top: 65.4%;
+                left: 10.1%;
+            }
+            .page-content .circle-btn:nth-child(18){                             
+                top: 70.4%;
+                left: 10.1%;
+            }
+            /* 7ala */
+            .page-content .circle-btn:nth-child(19){                                         
+                top: 65.4%;
+                left: 34%;
+            }
+            .page-content .circle-btn:nth-child(20){         
+                top: 70.5%;
+                left: 34.1%;
+             }
+             /* astqusa */
+             .page-content .circle-btn:nth-child(21){                                         
+                top: 65.4%;
+                left: 56.5%;
+            }
+            .page-content .circle-btn:nth-child(22){              
+                top: 70.4%;
+                left: 56.4%;
+            }
+            /* marwa7a */
+            .page-content .circle-btn:nth-child(23){                                         
+                top: 65.4%;
+                left: 77.4%;
+            }
+            .page-content .circle-btn:nth-child(24){         
+                top: 70.4%;
+                left: 77.4%;            
+            }
+
+
+              /* cat */
+              .page-content .circle-btn:nth-child(25){                                         
+                top: 84.3%;
+                left: 10%;
+            }
+            .page-content .circle-btn:nth-child(26){              
+                top: 89.3%;
+                left: 10%;
+            }
+            /* bus */
+            .page-content .circle-btn:nth-child(27){                                         
+                top: 84.3%;
+                left: 33.9%;
+            }
+            .page-content .circle-btn:nth-child(28){         
+                top: 89.3%;
+                left: 33.9%;            
+            }
+
+             /* map */
+             .page-content .circle-btn:nth-child(29){                                                       
+                top: 84.3%;
+                left: 56.4%;
+            }
+            .page-content .circle-btn:nth-child(30){                         
+                top: 89.3%;
+                left: 56.4%;
+            }
+            /* sun */
+            .page-content .circle-btn:nth-child(31){                                         
+                top: 84.4%;
+                left: 77.4%;
+            }
+            .page-content .circle-btn:nth-child(32){                   
+                top: 89.3%;
+                left: 77.4%;       
+            }
+
+            .eleTogel img{
+                position: absolute;
+                top: -3%;
+                left: 7%;
+                width: 90%;
+                height: 106%;
+            }
+           
+            
+            @media only screen and (max-width: 768px) {
+                .backgroundImageContainer{
+                    height: auto;
+                }
+            }
+            @media only screen and (max-width: 600px) {
+                .backgroundImageContainer{
+                    height: auto;
+                }
+                #mice{
+                    padding-top: 8%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page-container">
+            <img src="images/cover.png" alt="Background Image" class="backgroundImageContainer" />
+            <div id="mice">
+                <!-- Add A Shared Image Link -->
+                <img src="https://books.knowledgewave.org/math-1/public/images/megaphone.svg" alt="Mice" class="img-fluid">
+            </div>
+            <div class="page-content">
+                <!-- ball -->
+                <div class="circle-btn eleTogel"  validValue="true"></div>
+                <div class="circle-btn eleTogel"  validValue="false"></div>
+
+                <!-- shmsea -->
+                <div class="circle-btn eleTogel"  validValue="true"> </div>
+                <div class="circle-btn eleTogel"  validValue="false"> </div>
+                
+                <!-- music -->
+                <div class="circle-btn eleTogel"  validValue="false"></div>
+                <div class="circle-btn eleTogel"  validValue="true"></div>
+
+
+                <!-- tasa -->
+                <div class="circle-btn eleTogel"  validValue="false"></div>
+                <div class="circle-btn eleTogel"  validValue="true"> </div>
+
+
+
+                 <!-- camel -->
+                <div class="circle-btn eleTogel"  validValue="false"></div>
+                <div class="circle-btn eleTogel"  validValue="true"></div>
+
+
+
+                <!-- qoa3a -->
+                <div class="circle-btn eleTogel"  validValue="true"></div>
+                <div class="circle-btn eleTogel"  validValue="false"></div>
+
+                
+
+                <!-- pen -->
+                <div class="circle-btn eleTogel"  validValue="false"></div>
+                <div class="circle-btn eleTogel"  validValue="true"></div>
+
+
+                <!-- panuu -->
+                <div class="circle-btn eleTogel"  validValue="true"></div>
+                <div class="circle-btn eleTogel"  validValue="false"></div>
+
+
+                <!-- noise -->
+                <div class="circle-btn eleTogel"  validValue="false"> </div>
+                <div class="circle-btn eleTogel"  validValue="true"></div>
+
+
+                <!-- 7ala -->
+                <div class="circle-btn eleTogel"  validValue="true"></div>
+                <div class="circle-btn eleTogel"  validValue="false"></div>
+
+
+                 <!-- astqusa -->
+                 <div class="circle-btn eleTogel"  validValue="false"></div>
+                <div class="circle-btn eleTogel"  validValue="true"></div>
+
+
+                 <!-- marw7a -->
+                 <div class="circle-btn eleTogel"  validValue="false"></div>
+                <div class="circle-btn eleTogel"  validValue="true"></div>
+
+                 <!-- cat -->
+                <div class="circle-btn eleTogel"  validValue="false"></div>
+                <div class="circle-btn eleTogel"  validValue="true"></div>
+
+
+
+                 <!-- bus -->
+                <div class="circle-btn eleTogel"  validValue="false"></div>
+                <div class="circle-btn eleTogel"  validValue="true"></div>
+
+
+                 <!-- map -->
+                 <div class="circle-btn eleTogel"  validValue="false"></div>
+                 <div class="circle-btn eleTogel"  validValue="true"></div>
+
+
+                 <!-- moon -->
+                 <div class="circle-btn eleTogel"  validValue="false"></div>
+                <div class="circle-btn eleTogel"  validValue="true"></div>
+            </div>
+            <div class="validate-message px-2 py-2" id="validate-message">
+                <i id="like-icon" class="fas fa-thumbs-up"></i>
+                <p id="valid-message-text"> Good Jpb</p>
+            </div>
+        </div>
+        <script src="https://books.knowledgewave.org/math-1/public/js/jquery-3.2.1.min.js"></script>
+        <script src="https://books.knowledgewave.org/math-1/public/js/waveBooks.js"></script>
+        <script>
+            mice.addEventListener('click',()=>{
+            let initAudio = new Audio('Audio/Say the name of each picture. then choose the right letter, stands for the sound.mp3');
+            initAudio.play();
+        })
+      
+            // add custome effect 
+            document.querySelectorAll('.eleTogel').forEach(
+                item=>{
+                    item.addEventListener('click',function(){
+                        if(item.getAttribute('validValue') == "true"){
+                            checkValidity (true) 
+                            item.innerHTML = "<img class='img-fluid'  src='images/2.png'>"
+                        }else if (item.getAttribute("validValue") == "false"){
+                            checkValidity(false)
+                            item.innerHTML = ""
+                        }
+                    
+
+                    })
+                }
+            )
+        </script>
+    </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Color 6 toys</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+            <link rel="stylesheet" href="css/kursor.css">
+          <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+ 
+
+        <div class="root">
+            
+            <img id="root-img" class="img-fluid"   src="images/33-02.png">
+            <div class="layer-one">
+              
+                
+
+                <div id="mice">
+                    <!-- Add A Shared Image Link -->
+                    <img src="https://books.knowledgewave.org/math-1/public/images/megaphone.svg" alt="Mice" class="img-fluid"> 
+                </div>
+                
+                <div class="img-words">
+                    <img  class="img-fluid"   src="images/33-03.png">
+                </div>
+
+                <div class="balooan image-replace" forcounter="1">
+                    <img id="balooan" replaceTo="images/127-11.png" class="img-fluid" src="images/33-07.png">
+                </div>
+                <div  class="bear image-replace" forcounter="1">
+                    <img id="bear"  replaceTo="images/27-11.png" class="img-fluid"   src="images/33-04.png">
+                </div>
+                <div class="Rocket image-replace" forcounter="1">
+                    <img  id="rocket" replaceTo="images/127-09.png" class="img-fluid" src="images/33-01.png">
+                </div>
+                <div class="Drums image-replace" forcounter="1">
+                    <img  id="Drums" replaceTo="images/27-05.png" class="img-fluid" src="images/33-05.png">
+                </div>
+                <div class="plane image-replace" forcounter="1">
+                    <img id="plane" replaceTo="images/27-01.png"  class="img-fluid" src="images/33-09.png">
+                </div>
+                <div class="Previously image-replace" forcounter="1">
+                    <img  id="Previously" replaceTo="images/27-07.png" class="img-fluid" src="images/33-08.png">
+                </div>
+                <div class="train image-replace" forcounter="1">
+                    <img id="train"  replaceTo="images/27-03.png" class="img-fluid" src="images/33-06.png">
+                </div>
+
+
+                <div class="validate-message px-2 py-2" id="validate-message">
+                    <i id="like-icon" class="fas fa-thumbs-up"></i>
+                    <p id="valid-message-text"> Good Jpb</p>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+        
+
+        <script src="js/bootstrap.min.js"></script>
+        <script src="https://books.knowledgewave.org/math-1/public/js/jquery-3.2.1.min.js"></script>
+        <script src="https://books.knowledgewave.org/math-1/public/js/waveBooks.js"></script>
+        <script>
+            let myAudio1 = new Audio('Audio/Colour 6 toys.mp3');
+                myAudio1.play();
+                mice.addEventListener('click',()=>{
+                    myAudio1.play();
+                })
+
+let counter1 = 0;
+            let counter2 = 0;
+            document.querySelectorAll('.image-replace').forEach(image=>{
+                image.addEventListener('click',()=>{
+                    if (image.getAttribute('forcounter') === '1') {
+                        if (counter1 >= 6 ) {
+                            checkValidity(false)
+                        }else{
+                            if (image.childNodes[1].src !== image.childNodes[1].getAttribute('replaceTo')) {
+                                image.childNodes[1].src = image.childNodes[1].getAttribute('replaceTo');
+                                checkValidity(true)
+                                counter1 ++;   
+                            }
+                        }
+                    }else if(image.getAttribute('forcounter') === '2'){
+                        if (counter2 >= 4 ) {
+                            checkValidity(false)
+                        }else{
+                            image.childNodes[1].style.display = 'block';
+                            image.childNodes[1].src = image.childNodes[1].getAttribute('replaceTo');
+                            checkValidity(true)
+                            counter2 ++;
+                        }
+                    }
+                })
+            })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+ 
+        </script>
+    </body>
+</html>

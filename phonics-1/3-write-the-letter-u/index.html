@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Write the letter u</title>
+        <link rel="stylesheet" href="https://books.knowledgewave.org/math-1/public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <style>
+            .page-container{
+                width: 100%;
+                height: auto;
+                position: relative;
+                display: block;
+                margin: auto;
+                overflow: hidden;
+            }
+            .backgroundImageContainer{
+                width: 100%;
+                height: auto;
+            }
+            #mice{
+                position: absolute;
+                top: -4%;
+                left: 0;
+                width: 6%;
+                height: 16vw;
+                padding-top: 8%;
+                cursor: pointer;
+            }
+            #mice img{
+                transform:rotateZ(45deg);
+            }
+            .validate-message {
+                position: absolute;
+                left: -40%;
+                bottom: 2%;
+                font-size: 3vw;
+                color: #27ae60;
+                width: 40%;
+                height: 6vw;
+                border: 2px solid #27ae60;
+                border-left-width: 10px;
+                display: flex;
+                align-items: center;
+                background-color: #FFF;
+                border-radius: 5px;
+                padding: 14px !important;
+            }
+            #valid-message-text{
+                padding-top: 15px;
+                padding-left: 7px;
+                font-weight: bold;
+            }
+            /* page content */
+            .page-content .circle-btn{
+                position: absolute; 
+                width: 18%;
+                height: 10.4%;
+                border-radius: 11%;
+                text-align: center;            
+                font-size: 6vw;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                background:  transparent;
+            }
+            /* frist */
+            .page-content .circle-btn:first-child{    
+                top: 46.9%;
+                left: 6.6%;
+            }
+            .page-content .circle-btn:nth-child(2){              
+                top: 46.8%;
+                left: 42.1%;
+            }
+
+            /* second */
+            .page-content .circle-btn:nth-child(3){                                                
+                top: 46.8%;
+                left: 74.8%;
+            }
+            .page-content .circle-btn:nth-child(4){               
+                top: 84.9%;
+                left: 6.7%;
+            }
+
+            /* book */
+            .page-content .circle-btn:nth-child(5){              
+                top: 85.1%;
+                left: 41.9%;
+            }
+            .page-content .circle-btn:nth-child(6){                                      
+                top: 85%;
+                left: 74.6%;
+            }
+
+
+
+            /* sounds to listen */
+            .page-content .circle-audio:nth-child(7){
+                position: absolute;
+                top: 22.5%;
+                left: 4.9%;
+                background: transparent;
+                width: 22%;
+                height: 24.6%;
+            }
+            .page-content .circle-audio:nth-child(8){
+                position: absolute;
+                top: 22.5%;
+                left: 39.7%;
+                background: transparent;
+                width: 22%;
+                height: 24.6%;   
+            }
+            .page-content .circle-audio:nth-child(9){
+                position: absolute;
+                top: 22.3%;
+                left: 72.5%;
+                background: transparent;
+                width: 22%;
+                height: 24.9%;
+            }
+            .page-content .circle-audio:nth-child(10){
+                position: absolute;              
+                top: 60.5%;
+                left: 5%;
+                background: transparent;
+                width: 22%;
+                height: 24.6%;
+
+            }
+            .page-content .circle-audio:nth-child(11){
+                position: absolute;
+                top: 60.2%;
+                left: 39.9%;
+                background: transparent;
+                width: 22%;
+                height: 24.6%;
+      
+            }
+            .page-content .circle-audio:nth-child(12){
+                position: absolute;
+                top: 60.3%;
+                left: 72.5%;
+                background: transparent;
+                width: 22%;
+                height: 24.6%;
+
+            }
+            .eleTogel img{
+                position: absolute;
+                top: 19%;
+                left: 17%;
+                width: 65%;
+            }
+           .circle-btn input{
+               width: 100%;
+               height: 100%;
+               background: transparent;
+               text-align: center;
+               border: none;
+               position: absolute;
+               top: 0%;
+               left: 0%;
+           }
+           input:focus{
+               outline: none;
+           }
+            
+            @media only screen and (max-width: 768px) {
+                .backgroundImageContainer{
+                    height: 75vw;
+                }
+            }
+            @media only screen and (max-width: 600px) {
+                .backgroundImageContainer{
+                    height: 75vw;
+                }
+                #mice{
+                    padding-top: 8%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page-container">
+            <img src="images/1.png" alt="Background Image" class="backgroundImageContainer" />
+            <div id="mice">
+                <!-- Add A Shared Image Link -->
+                <img src="https://books.knowledgewave.org/math-1/public/images/megaphone.svg" alt="Mice" class="img-fluid">
+            </div>
+            <div class="page-content">
+                <!-- crp -->
+                <div class="circle-btn eleTogel" >
+                    <input class="interLetter" validValue="u">
+                </div>
+                <div class="circle-btn eleTogel">
+                    <input class="interLetter" validValue="u">
+                </div>
+
+                <!-- web -->
+                <div class="circle-btn eleTogel"  >
+                    <input class="interLetter" validValue=".">
+                </div>
+                <div class="circle-btn eleTogel"  >
+                    <input class="interLetter" validValue="u">
+                </div>
+                
+                <!-- book -->
+                <div class="circle-btn eleTogel" >
+                    <input class="interLetter" validValue="u">
+                </div>
+                <div class="circle-btn eleTogel" >
+                    <input class="interLetter" validValue="u">
+                </div>
+
+
+
+                <!-- sounds to litsen -->
+                <div id="nut" class="circle-audio" >
+                   
+                </div>
+                <div id="rug" class="circle-audio" >
+                   
+                </div>
+                <div id="Cat" class="circle-audio" >
+                   
+                </div>
+                <div id="gumm" class="circle-audio" >
+                   
+                </div>
+                <div id="jug" class="circle-audio" >
+                   
+                </div>
+                <div id="plug" class="circle-audio" >
+                   
+                </div>
+            </div>
+            <div class="validate-message px-2 py-2" id="validate-message">
+                <i id="like-icon" class="fas fa-thumbs-up"></i>
+                <p id="valid-message-text"> Good Jpb</p>
+            </div>
+        </div>
+        <script src="https://books.knowledgewave.org/math-1/public/js/jquery-3.2.1.min.js"></script>
+        <script src="https://books.knowledgewave.org/math-1/public/js/waveBooks.js"></script>
+        <script>
+            mice.addEventListener('click',()=>{
+            let initAudio = new Audio('Audio/Write the letter.v u hen you hear the.u sound.mp3');
+            initAudio.play();
+        })
+            // add custome effect 
+           
+            nut.addEventListener('click',()=>{
+            let testSou = new Audio('Audio/nut.mp3');
+            testSou.play();
+            })
+            rug.addEventListener('click',()=>{
+                let testSou = new Audio('Audio/rug.mp3');
+                testSou.play();
+            })
+            Cat.addEventListener('click',()=>{
+                let testSou = new Audio('Audio/Cat.mp3');
+                testSou.play();
+            })
+
+            gumm.addEventListener('click',()=>{
+            let testSou = new Audio('Audio/gumm.mp3');
+            testSou.play();
+            })
+            jug.addEventListener('click',()=>{
+                let testSou = new Audio('Audio/jug.mp3');
+                testSou.play();
+            })
+            plug.addEventListener('click',()=>{
+                let testSou = new Audio('Audio/plug.mp3');
+                testSou.play();
+            })
+
+
+
+
+
+            document.querySelectorAll(".interLetter").forEach(function(e){
+                e.addEventListener("input",function(){
+                    var letter = e.getAttribute("validValue");
+                    var dataCome = e.value;
+                    if(letter == dataCome.toLowerCase()){
+                        checkValidity(true)
+                    }else{
+                        checkValidity(false)
+                    }
+                
+                })
+            })
+        </script>
+    </body>
+</html>

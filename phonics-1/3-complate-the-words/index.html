@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>complete the words</title>
+        <link rel="stylesheet" href="https://books.knowledgewave.org/math-1/public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <style>
+            .page-container{
+                width: 100%;
+                height: auto;
+                position: relative;
+                display: block;
+                margin: auto;
+                overflow: hidden;
+            }
+            .backgroundImageContainer{
+                width: 100%;
+                height: auto;
+            }
+            #mice{
+                position: absolute;
+                top: -11%;
+                left: 0;
+                width: 6%;
+                height: 16vw;
+                padding-top: 8%;
+                cursor: pointer;
+            }
+            #mice img{
+                transform:rotateZ(45deg);
+            }
+            .validate-message {
+                position: absolute;
+                left: -40%;
+                bottom: 0%;
+                font-size: 3vw;
+                color: #27ae60;
+                width: 40%;
+                height: 6vw;
+                border: 2px solid #27ae60;
+                border-left-width: 10px;
+                display: flex;
+                align-items: center;
+                background-color: #FFF;
+                border-radius: 5px;
+                padding: 14px !important;
+            }
+            #valid-message-text{
+                padding-top: 15px;
+                padding-left: 7px;
+                font-weight: bold;
+            }
+            /* page content */
+            .page-content .circle-btn{
+                position: absolute;         
+                width: 19.2%;
+                height: 11.7%;
+                text-align: center;            
+                font-size: 6vw;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                background: transparent;
+            }
+            /* frist */
+            .page-content .circle-btn:first-child{    
+                top: 23.2%;
+                left: 24.6%;
+            }
+            .page-content .circle-btn:nth-child(2){              
+                top: 52.1%;
+                left: 24.6%;
+            }
+
+            /* second */
+            .page-content .circle-btn:nth-child(3){                          
+                top: 79.1%;
+                left: 24.6%;
+            }
+            .page-content .circle-btn:nth-child(4){            
+                top: 23.6%;
+                left: 77.5%;
+            }
+
+            /* book */
+            .page-content .circle-btn:nth-child(5){                           
+                top: 51.7%;
+                left: 77.5%;
+            }
+            .page-content .circle-btn:nth-child(6){                           
+                top: 78.7%;
+                left: 77.5%;
+            }
+
+
+
+          
+           .circle-btn input{
+               width: 100%;
+               height: 100%;
+               background: transparent;
+               text-align: center;
+               border: none;
+               position: absolute;
+               top: 0%;
+               left: 0%;
+           }
+           input:focus{
+               outline: none;
+           }
+            
+            @media only screen and (max-width: 768px) {
+                .backgroundImageContainer{
+                    height: auto;
+                }
+            }
+            @media only screen and (max-width: 600px) {
+                .backgroundImageContainer{
+                    height: auto;
+                }
+                #mice{
+                    padding-top: 8%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page-container">
+            <img src="images/1.png" alt="Background Image" class="backgroundImageContainer" />
+            <div id="mice">
+                <!-- Add A Shared Image Link -->
+                <img src="https://books.knowledgewave.org/math-1/public/images/megaphone.svg" alt="Mice" class="img-fluid">
+            </div>
+            <div class="page-content">
+                <!-- crp -->
+                <div class="circle-btn eleTogel"  >
+                    <input class="interLetter" validValue="ug">
+                </div>
+                <div class="circle-btn eleTogel">
+                    <input class="interLetter" validValue="ub">
+                </div>
+
+                <!-- web -->
+                <div class="circle-btn eleTogel"  >
+                    <input class="interLetter" validValue="ub">
+                </div>
+                <div class="circle-btn eleTogel"  >
+                    <input class="interLetter" validValue="ug">
+                </div>
+                
+                <!-- book -->
+                <div class="circle-btn eleTogel" >
+                    <input class="interLetter" validValue="up">
+                </div>
+               
+                <div class="circle-btn eleTogel" >
+                    <input class="interLetter" validValue="ub">
+                </div>
+
+
+               
+            </div>
+            <div class="validate-message px-2 py-2" id="validate-message">
+                <i id="like-icon" class="fas fa-thumbs-up"></i>
+                <p id="valid-message-text"> Good Job</p>
+            </div>
+        </div>
+        <script src="https://books.knowledgewave.org/math-1/public/js/jquery-3.2.1.min.js"></script>
+        <script src="https://books.knowledgewave.org/math-1/public/js/waveBooks.js"></script>
+        <script>
+            mice.addEventListener('click',()=>{
+            let initAudio = new Audio('Audio/Complete the words..mp3');
+            initAudio.play();
+        })
+        
+            // add custome effect 
+           
+            document.querySelectorAll(".interLetter").forEach(function(e){
+                e.addEventListener("input",function(){
+                    var letter = e.getAttribute("validValue");
+                    var dataCome = e.value;
+                    if( e.value.length >= 2){
+                        if(letter == dataCome.toLowerCase()){
+                        setTimeout(function(){   checkValidity(true); }, 1500);
+                       
+                    }else{
+                        setTimeout(function(){   checkValidity(false); }, 1500);
+                        
+                    }
+                    }
+                })
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Count and Match</title>
+        <link rel="stylesheet" href="https://books.knowledgewave.org/math-1/public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <style>
+            .page-container{
+                width: 100%;
+                height: auto;
+                position: relative;
+                display: block;
+                margin: auto;
+                overflow: hidden;
+            }
+            .backgroundImageContainer{
+                width: 100%;
+                height: auto;
+            }
+            #mice{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 6%;
+                height: 16vw;
+                padding-top: 4%;
+                cursor: pointer;
+            }
+            #mice img{
+                transform:rotateZ(45deg);
+            }
+            .img-words{
+
+                position: absolute;
+                top: 4%;
+                left: 7%;
+                width: 40%;
+                height: 9%;
+                
+            }
+            .img-words img{
+                width: 100;
+                height: 100%;
+            }
+            .validate-message {
+                position: absolute;
+                left: -40%;
+                bottom: 2%;
+                font-size: 3vw;
+                color: #27ae60;
+                width: 40%;
+                height: 6vw;
+                border: 2px solid #27ae60;
+                border-left-width: 10px;
+                display: flex;
+                align-items: center;
+                background-color: #FFF;
+                border-radius: 5px;
+                padding: 14px !important;
+            }
+            #valid-message-text{
+                padding-top: 15px;
+                padding-left: 7px;
+                font-weight: bold;
+            }
+            /* page content */
+            .page-content .ref-btn{
+                position: absolute;
+                width: 18.7%;
+                height: 10.5%;
+                text-align: center;
+                background-color: transparent;
+                font-size: 6vw;
+                border-radius: 15%;
+                border: none;
+                outline: none;
+                cursor: pointer;
+            }
+            .page-content .ref-btn:first-child{
+                top: 28%;
+                left: 4.7%;
+                width: 33%;
+                height: 55%;
+            }
+            .page-content .ref-btn:nth-child(2){
+                top: 4.5%;
+                left: 48.7%;
+                width: 45%;
+                height: 30%;
+                border-radius: 5%;
+            }
+            .page-content .ref-btn:nth-child(3){
+                top: 39.5%;
+                left: 51.7%;
+                width: 45%;
+                height: 30%;
+                border-radius: 5%;
+            }
+            .page-content .ref-btn:nth-child(4){               
+            top: 70.5%;
+            left: 44.7%;
+            width: 52%;
+            height: 30%;
+            border-radius: 5%;
+            }
+            .ref-dot{
+                position: absolute;
+                right: 25px;
+                top: 50%;
+                width: 10px;
+                height: 10px;
+                background-color: transparent;
+            }
+            .page-content .ref-btn:nth-child(2) .ref-dot{
+                position: absolute;
+                left: 2%;
+                top: 52%;
+                background-color: transparent;
+                width: 15px;
+                height: 15px;
+            }
+            .page-content .ref-btn:nth-child(3) .ref-dot{
+                position: absolute;
+                left: 0%;
+                top:46%;
+                background-color: transparent;
+                width: 15px;
+                height: 15px;
+            }
+            .page-content .ref-btn:nth-child(4) .ref-dot{
+                position: absolute;              
+                left: -3%;
+                top: 50%;
+                background-color: transparent;
+                width: 15px;
+                height: 15px;
+            }
+            @media only screen and (max-width: 768px) {
+                .backgroundImageContainer{
+                    height: 75vw;
+                }
+            }
+            @media only screen and (max-width: 600px) {
+                .backgroundImageContainer{
+                    height: 75vw;
+                }
+                #mice{
+                    padding-top:3%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page-container">
+            <img src="images/27-01.png" alt="Background Image" class="backgroundImageContainer" />
+            <div id="mice">
+                <!-- Add A Shared Image Link -->
+                <img src="https://books.knowledgewave.org/math-1/public/images/megaphone.svg" alt="Mice" class="img-fluid">
+            </div>
+
+            <div class="img-words">
+                <img class="img-fluid" src="images/32-02.png">
+            </div>
+
+
+            <div class="page-content">
+                <div class="ref-btn " id="refDot">
+                    <div class="ref-dot"></div>
+                </div>
+                <div class="ref-btn match-ref" validValue="true" >
+                    <div class="ref-dot"></div>
+                </div>
+                <div class="ref-btn match-ref" validValue="true" >
+                    <div class="ref-dot"></div>
+                </div>
+                <div class="ref-btn match-ref" validValue="false" >
+                    <div class="ref-dot"></div>
+                </div>
+            </div>
+            <div class="validate-message px-2 py-2" id="validate-message">
+                <i id="like-icon" class="fas fa-thumbs-up"></i>
+                <p id="valid-message-text"> Good Jpb</p>
+            </div>
+        </div>
+        <script src="https://books.knowledgewave.org/math-1/public/js/jquery-3.2.1.min.js"></script>
+        <script src="https://books.knowledgewave.org/math-1/public/js/leader-line.min.js"></script>
+        <script src="https://books.knowledgewave.org/math-1/public/js/waveBooks.js"></script>
+        <script>
+            mice.addEventListener('click',()=>{
+            let initAudio = new Audio('Audio/Count and match.mp3');
+            initAudio.play();
+        })
+        let refElem ;
+        let initMatch = ( refEle , toEle , message ) =>{
+            if (message === true) {
+                let myLine = new LeaderLine(
+                    refEle,
+                    toEle,
+                    {hide: true,
+                    color: 'green'},
+                    );
+                    myLine.show( 'draw', {duration:500,timing:[0.58, 0, 0.42, 1]});
+                    checkValidity(true)
+            }else if(message === false ){
+                let myLine = new LeaderLine(
+                    refEle,
+                    toEle,
+                    {hide: true,
+                    color: 'red'},
+                    );
+                    myLine.show( 'draw', {duration:500,timing:[0.58, 0, 0.42, 1]});
+                    setTimeout(()=>{
+                        myLine.hide()
+                    },1000)
+                    checkValidity(false)
+            }
+        }
+        document.querySelectorAll('.match-ref').forEach((elem)=>{
+            elem.addEventListener('click',(e)=>{
+                    if (elem.getAttribute('validValue') == 'true' ) {
+                    initMatch(document.getElementById('refDot').childNodes[1] , elem.childNodes[1] , true )
+                    }else {
+                        initMatch( document.getElementById('refDot').childNodes[1] , elem.childNodes[1] , false)
+                    }   
+            })
+        })
+        </script>
+    </body>
+</html>

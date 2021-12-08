@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <style>
+                      body{
+            height: 100%;
+            position: relative;
+        }
+        .container{
+            position: relative;
+            overflow: hidden;
+            background-color: #dadadae2;
+            max-width: 100%;
+        }
+        .image-drag{
+            cursor: pointer;
+        }
+        #dragedContainer{
+            width: 100%;
+            /* height: 100vh; */
+            background-repeat: no-repeat;
+            background-image: url('unit 1 final 4-03.png');
+            background-size: cover;
+        }
+        .elementsToDrag{
+            width: 100%;
+            height: 200px;
+        }
+        .img-con{
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #imageMice{
+            cursor: pointer;
+            position: relative;
+        }
+        /* #imageMice::before{
+            content: url(https://books.knowledgewave.org/math-1/public/images/megaphone.svg)'';
+            position: absolute;
+            top: 16px;
+            left: 3%;
+            width: 24px;
+            font-family: 'Original Surfer', cursive;
+        } */
+        #dragedContainer h1{
+            font-size: 32px;
+            font-family: 'Original Surfer', cursive;
+            text-align: center;
+        }
+        @media  (max-width: 600px) {
+            #imageMice::after{
+            font-size: 14px;
+            top: 15px;
+        }
+        }
+        .validate-message {
+            position: absolute;
+            left: -40%;
+            bottom: 2%;
+            font-size: 3vw;
+            color: #27ae60;
+            width: 35%;
+            height: 6vw;
+            border: 2px solid #27ae60;
+            border-left-width: 10px;
+            display: flex;
+            align-items: center;
+            background-color: #FFF;
+            border-radius: 5px;
+            padding: 14px !important;
+        }
+        #valid-message-text{
+            padding-top: 15px;
+            padding-left: 7px;
+            font-weight: bold;
+        }
+        .image-drag{
+            min-width: 15%;
+        }
+        .img-drop{
+            min-width: 15%;
+        }
+        .dragcomponent{
+            width: auto !important;
+            position: relative;
+        }
+        .dropcomponent{
+            height: auto;
+        }
+        .dragComponent{
+            height: auto;
+        }
+        /* .dragComponent{
+            width: 100%;
+            height: 200px;
+        }
+        .dragComponent .image-drag{
+            position: absolute;
+            top: 10%;
+        } */
+        /* .dragComponent .image-drag:first-child{
+            left: 24.740614%;
+        }
+        .dragComponent .image-drag:nth-child(2){
+            left: 50%;
+        }
+        .dragComponent .image-drag:nth-child(3){
+            left:75%;
+        } */
+        .mice{
+            width: 10%;
+        }
+        @media only screen and (max-width: 600px) {
+            /* .validate-message {
+            position: absolute;
+            left: -250px;
+            bottom: 0;
+            font-size: 20;
+            color:#27ae60;
+            width: 250px;
+            height: 75px;
+            border: 2px solid #27ae60;
+            border-left-width: 10px;
+            display: flex;
+            align-items: center;
+            background-color: #FFF;
+            border-radius: 5px;
+        }
+        #valid-message-text{
+            font-size: 20px;
+            padding-top: 15px;
+            padding-left: 7px;
+            font-weight: bold;
+        } */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container  w-100 px-0 mx-0" id="dragedContainer">
+        <h1 class="text-center">let's blend the sounds</h1>
+        <div class="w-100 charBox d-block m-auto position-relative" id="imageMice">
+            <img src="https://books.knowledgewave.org/math-1/public/images/megaphone.svg" alt="Mice" class="mice m-auto d-block text-center"> 
+            <img class="img-fluid m-auto d-block text-center" src="./bus.png"  alt="drage image"/>
+        </div>
+        <div class="dragcomponent mt-3" id="dragcomponent">
+            <div class="dragComponent w-100 d-flex justify-content-center">
+                <div class="image-drag m-1" draggable="true">
+                    <img src="./b.png" class="image-drag-tag img-fluid" forImg="b" id="b" alt="drage image"/>
+                </div>
+                <div class="image-drag m-1" draggable="true">
+                    <img src="./u.png" class="image-drag-tag img-fluid" forImg="u" id="u" alt="drage image"/>
+                </div>
+                <div class="image-drag m-1" draggable="true">
+                    <img src="./a.png" class="image-drag-tag img-fluid" forImg="a" id="a" alt="drage image"/>
+                </div>
+                <div class="image-drag m-1"  draggable="true">
+                    <img src="./e.png" class="image-drag-tag img-fluid" forImg="e" id="e"  alt="drage image"/>
+                </div>
+                <div class="image-drag m-1" draggable="true">
+                    <img src="./t.png" class="image-drag-tag img-fluid" forImg="t" id="t" alt="drage image"/>
+                </div>
+                <div class="image-drag m-1"  draggable="true">
+                    <img src="./s.png" class="image-drag-tag img-fluid" forImg="s" id="s"  alt="drage image"/>
+                </div>
+            </div>
+            <div class="dropcomponent w-100 d-flex justify-content-center">
+                <div class="img-drop m-1" >
+                    <img src="./unit 1-10.png" class="image-drop img-fluid" BoxFor="b"  alt="drage image"/>
+                </div>
+                <div class="img-drop m-1"  >
+                    <img src="./unit 1-10.png" class="image-drop img-fluid" BoxFor="u"  alt="drage image"/>
+                </div>
+                <div class="img-drop m-1" >
+                    <img src="./unit 1-10.png" class="image-drop img-fluid" BoxFor="s"  alt="drage image"/>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+        <div class="validate-message px-2" id="validate-message">
+            <i id="like-icon" class="fas fa-thumbs-up"></i>
+            <p id="valid-message-text"></p>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="https://books.knowledgewave.org/math-1/public/js/waveBooks.js"></script>
+    <script>
+        window.addEventListener('load',  function() {
+            imageMice.addEventListener('click',()=>{
+                let antAudio = new Audio('Audio/Bus.mp3');
+                antAudio.play();
+            })
+            setTimeout(
+                ()=>{
+                    let ElementsPos = [];
+            document.querySelectorAll('.image-drag-tag').forEach((image,index)=>{
+                if(image.complete){
+                    ElementsPos.push({'top':image.offsetTop,'left':image.offsetLeft,'id':image.id,'width':image.clientWidth,'height':image.clientHeight})                    
+                    console.log(ElementsPos);
+                } 
+            })
+            document.querySelectorAll('.img-con').forEach((image,index)=>{
+                document.querySelectorAll('.image-drag').forEach((dragImage,index2)=>{
+                    if (index === index2 && image.childNodes[1].offsetLeft !== 0) {
+                    }
+                })
+            })
+        const dragContainer = document.getElementById('dragedContainer');
+        document.querySelectorAll('.img-con ').forEach(icon=>{
+            if (document.getElementById(icon.getAttribute('BoxFor'))) {
+                document.getElementById(icon.getAttribute('BoxFor')).parentElement.style.left = ( icon.offsetLeft / dragContainer.offsetWidth ) *100 + "%"
+            }
+        })
+        document.querySelectorAll('.image-drag-tag').forEach(box=>{
+            // init Drage Element Function
+            let  dragElement = (elmnt)=> {
+            var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+                elmnt.onmousedown = dragMouseDown;
+                elmnt.ontouchmove = dragMouseDown;
+            }
+            // General Drage Function
+            let  dragMouseDown = e => {
+
+                e = e || window.event;
+                e.preventDefault();
+                // get the mouse cursor position at startup:
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.ontouchend  = closedragMobile;
+                document.onmouseup = closeDragElement;
+                // call a function whenever the cursor moves:
+                document.onmousemove = elementDrag;
+                document.ontouchmove = dragMobile;
+            }
+
+            // Touch Drag Handerler 
+
+            box.addEventListener('touchmove',()=>dragElement(box))
+            // Drage Or Move Event
+            let  dragMobile = e => {
+                box.style.width = ElementsPos[0].width+'px';
+                box.style.height = ElementsPos[0].height+'px';
+                box.parentElement.style.width = ElementsPos.filter(img=>img.id===box.id)[0].width+'px'
+                box.parentElement.style.height = ElementsPos.filter(img=>img.id===box.id)[0].height+'px'
+                var touchLocation = e.targetTouches[0];
+                box.style.left = (touchLocation.clientX-document.getElementById('dragcomponent').offsetLeft)- 25 + 'px';
+                box.style.top =  (touchLocation.clientY-document.getElementById('dragcomponent').offsetTop)- 25 + 'px';
+                box.style.position = 'absolute';
+                 // element Left
+                box.offsetLeft <= document.getElementById('dragcomponent').offsetLeft ? box.style.left = '0px' : ''; 
+                // element Right 
+                (box.offsetLeft + box.clientWidth) >= document.getElementById('dragcomponent').clientWidth ? box.style.left = (document.getElementById('dragcomponent').clientWidth-box.clientWidth)+'px' : '';
+                // elemnt Top 
+                (box.offsetTop + document.getElementById('dragcomponent').offsetTop) <= document.getElementById('dragcomponent').offsetTop ? box.style.top ='0px' :'';
+                // element Bottom
+                box.offsetTop >= (document.getElementById('dragcomponent').offsetHeight-box.clientHeight) ? box.style.top = (document.getElementById('dragcomponent').offsetHeight-box.clientHeight)+'px' :'';
+            }
+            // Cancel Drag Event
+            let  closedragMobile = e => {
+
+                var touchLocation = e.changedTouches[0];
+             // stop moving when mouse button is released:
+                box.hidden = true;
+                let elemBelow = document.elementFromPoint(touchLocation.clientX,touchLocation.clientY);
+                box.hidden = false;
+                if (elemBelow) {
+                    if (elemBelow.classList.contains('image-drop')) {
+                        if(elemBelow.getAttribute('BoxFor') === e.composedPath()[0].id ){
+                            elemBelow.src = e.composedPath()[0].src;
+                            box.style.display = 'none';
+                            checkValidity(true)
+                        }else{
+                            let elemPos = ElementsPos.filter(item=>item.id === box.id)[0];
+                            $('#'+box.id).animate({left:elemPos.left+"px",top:(elemPos.top)+"px" });
+                            checkValidity(false)
+                        }
+                    }else{
+                        let elemPos = ElementsPos.filter(item=>item.id === box.id)[0];
+                        $('#'+box.id).animate({left:elemPos.left+"px",top:(elemPos.top)+"px" });
+                        checkValidity(false)
+                    }
+                }
+                document.ontouchmove = null;
+                document.ontouchend  = null;
+            }
+            // Desktop Drag Handerler
+            box.addEventListener('mousemove',()=>dragElement(box))
+            // Drag Or Move Event
+            let  elementDrag = e => {
+                box.style.width = ElementsPos[0].width+'px';
+                box.style.height = ElementsPos[0].height+'px';
+                e = e || window.event;
+                e.preventDefault();
+                // calculate the new cursor position:
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                // set the element's new position:;
+                box.style.top = (box.offsetTop - pos2) + "px";
+                box.style.left = (box.offsetLeft - pos1) + "px";
+                box.style.position = 'absolute';
+                // element Left
+                box.offsetLeft <= document.getElementById('dragcomponent').offsetLeft ? box.style.left = '0px' : ''; 
+                // element Right 
+                (box.offsetLeft + box.clientWidth) >= document.getElementById('dragcomponent').clientWidth ? box.style.left = (document.getElementById('dragcomponent').clientWidth-box.clientWidth)+'px' : '';
+                // elemnt Top 
+                (box.offsetTop + document.getElementById('dragcomponent').offsetTop) <= document.getElementById('dragcomponent').offsetTop ? box.style.top ='0px' :'';
+                // element Bottom
+                box.offsetTop >= (document.getElementById('dragcomponent').offsetHeight-box.clientHeight) ? box.style.top = (document.getElementById('dragcomponent').offsetHeight-box.clientHeight)+'px' :'';
+            }
+            // Cancel Drag Event
+            let  closeDragElement = e => {
+                console.log(e.composedPath());
+                box.hidden = true;
+                let elemBelow = document.elementFromPoint(pos3,pos4);
+                box.hidden = false;
+                if (elemBelow) {
+                    if (elemBelow.classList.contains('image-drop')) {
+                        if(elemBelow.getAttribute('BoxFor') === e.composedPath()[0].id ){
+                            elemBelow.src = e.composedPath()[0].src;
+                            box.style.display = 'none';
+                            checkValidity(true)
+                        }else{
+                            let elemPos = ElementsPos.filter(item=>item.id === box.id)[0];
+                            $('#'+box.id).animate({left:elemPos.left+"px",top:(elemPos.top)+"px" });
+                            checkValidity(false)
+                        }
+                    }else{
+                        let elemPos = ElementsPos.filter(item=>item.id === box.id)[0];
+                        $('#'+box.id).animate({left:elemPos.left+"px",top:(elemPos.top)+"px" });
+                        checkValidity(false)
+                    }
+                }
+                // stop moving when mouse button is released:
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        })
+                },500
+    )
+            })
+    </script>
+</body>
+</html>

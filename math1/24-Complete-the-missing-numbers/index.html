@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>What comes after</title>
+        <link rel="stylesheet" href="https://books.knowledgewave.org/math-1/public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <style>
+            .page-container{
+                width: 100%;
+                height: auto;
+                position: relative;
+                display: block;
+                margin: auto;
+                overflow: hidden;
+            }
+            .backgroundImageContainer{
+                width: 100%;
+                height: auto;
+            }
+            #mice{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 6%;
+                height: 16vw;
+                padding-top:10%;
+                cursor: pointer;
+            }
+            #mice img{
+                transform:rotateZ(45deg);
+            }
+            .validate-message {
+                position: absolute;
+                left: -40%;
+                bottom: 0;
+                font-size: 3vw;
+                color: #27ae60;
+                width: 40%;
+                height: 6vw;
+                border: 2px solid #27ae60;
+                border-left-width: 10px;
+                display: flex;
+                align-items: center;
+                background-color: #FFF;
+                border-radius: 5px;
+                padding: 14px !important;
+            }
+            #valid-message-text{
+                padding-top: 15px;
+                padding-left: 7px;
+                font-weight: bold;
+            }
+            /* page content */
+            .page-content .text-box{
+                position: absolute;
+                width: 8.5%;
+                height: 12%;
+                text-align: center;
+                background-color:transparent;
+                font-size: 6vw;
+                border: none;
+                outline: none;
+            }
+            .page-content .text-box:first-child{
+                top: 27%;
+                left: 23.4%;
+            }
+            .page-content .text-box:nth-child(2){
+                top: 27%;
+                left: 32.6%;
+            }
+            .page-content .text-box:nth-child(3){
+                top: 27%;
+                left: 42.2%;
+            }
+            .page-content .text-box:nth-child(4){
+                top: 27%;
+                left: 61.2%;
+            }
+            .page-content .text-box:nth-child(5){
+                top: 27%;
+                left: 70.3%;
+            }
+            .page-content .text-box:nth-child(6){
+                top: 27%;
+                left: 80%;
+            }
+            .page-content .text-box:nth-child(7){
+                top: 40.7%;
+                left: 13.7%;
+            }
+            .page-content .text-box:nth-child(8){
+                top: 40.7%;
+                left: 23.4%;
+            }
+            .page-content .text-box:nth-child(9){
+                top: 40.7%;
+                left: 32.6%;
+            }
+            .page-content .text-box:nth-child(10){
+                top: 40.7%;
+                left: 42%;
+            }
+            .page-content .text-box:nth-child(11){
+                top: 40.7%;
+                left: 51.6%;
+            }
+            .page-content .text-box:nth-child(12){
+                top: 40.7%;
+                left: 61.2%;
+            }
+            .page-content .text-box:nth-child(13){
+                top: 40.7%;
+                left: 70.4%;
+            }
+            .page-content .text-box:nth-child(14){
+                top: 40.7%;
+                left: 80%;
+            }
+            .page-content .text-box:nth-child(15){
+                top: 53.6%;
+                left: 31.8%;
+            }
+            .page-content .text-box:nth-child(16){
+                top: 53.6%;
+                left: 41.5%;
+            }
+            .page-content .text-box:nth-child(17){
+                top: 53.6%;
+                left: 50.7%;
+            }
+            .page-content .text-box:nth-child(18){
+                top: 53.6%;
+                left: 60.3%;
+            }
+            @media only screen and (max-width: 768px) {
+                .backgroundImageContainer{
+                    height: 75vw;
+                }
+            }
+            @media only screen and (max-width: 600px) {
+                .backgroundImageContainer{
+                    height: 75vw;
+                }
+                #mice{
+                    padding-top:10%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page-container">
+            <img src="images/1.jpg" alt="Background Image" class="backgroundImageContainer" />
+            <div id="mice">
+                <!-- Add A Shared Image Link -->
+                <img src="https://books.knowledgewave.org/math-1/public/images/megaphone.svg" alt="Mice" class="img-fluid">
+            </div>
+            <div class="page-content">
+                <input class="text-box" validValue="2"/>
+                <input class="text-box" validValue="3"/>
+                <input class="text-box" validValue="4"/>
+                <input class="text-box" validValue="6"/>
+                <input class="text-box" validValue="7"/>
+                <input class="text-box" validValue="8"/>
+                <input class="text-box" validValue="9"/>
+                <input class="text-box" validValue="10"/>
+                <input class="text-box" validValue="11"/>
+                <input class="text-box" validValue="12"/>
+                <input class="text-box" validValue="13"/>
+                <input class="text-box" validValue="14"/>
+                <input class="text-box" validValue="15"/>
+                <input class="text-box" validValue="16"/>
+                <input class="text-box" validValue="17"/>
+                <input class="text-box" validValue="18"/>
+                <input class="text-box" validValue="19"/>
+                <input class="text-box" validValue="20"/>
+            </div>
+            <div class="validate-message px-2 py-2" id="validate-message">
+                <i id="like-icon" class="fas fa-thumbs-up"></i>
+                <p id="valid-message-text"> Good Jpb</p>
+            </div>
+        </div>
+        <script src="https://books.knowledgewave.org/math-1/public/js/jquery-3.2.1.min.js"></script>
+        <script src="https://books.knowledgewave.org/math-1/public/js/waveBooks.js"></script>
+        <script>
+        mice.addEventListener('click',()=>{
+            let initAudio = new Audio('Audio/Complete the missing numbers.mp3');
+            initAudio.play();
+        })
+            initValidation('.text-box')
+        </script>
+    </body>
+</html>

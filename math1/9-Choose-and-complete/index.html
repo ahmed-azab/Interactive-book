@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose and complete</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <style>
+        .container{
+            max-width: 953px;
+            overflow: hidden;
+        }
+        #renderContainer{
+            width:100%;
+            height: 693px;
+            position: relative;
+            background-image: url('9.jpg');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: cover;
+        }
+        #mice{
+            font-size: 50px;
+            cursor: pointer;
+            padding-top: 9%;
+            color: green;
+        }
+        #mice  .mice-img{
+            width: 50px;
+            height: 71px;
+            transform: rotateZ( 
+        45deg
+        );
+            cursor: pointer;
+            z-index: 184;
+        }
+        .validate-message {
+            position: absolute;
+            left: -150px;
+            bottom: 2%;
+            font-size: 99px;
+            color: green;
+        }
+        #renderContainer button.chooseElem:first-child{
+            background: transparent;
+            width: 9%;
+            height: 3vw;
+            outline: none;
+            border: none;
+            position: absolute;
+            top: 36%;
+            left: 70%;
+            border-radius: 138px;
+        }
+        #renderContainer button.chooseElem:nth-child(2){
+            width: 9%;
+            height: 3vw;
+            outline: none;
+            border: none;
+            position: absolute;
+            top: 36%;
+            left: 83%;
+            border-radius: 138px;
+            background: transparent;
+        }
+        #renderContainer button.chooseElem:nth-child(3){
+            width: 9%;
+            height: 3vw;
+            outline: none;
+            border: none;
+            position: absolute;
+            top: 47%;
+            left: 70%;
+            border-radius: 138px;
+            background: transparent;
+        }
+        #renderContainer button.chooseElem:nth-child(4){
+            width: 9%;
+            height: 3vw;
+            outline: none;
+            border: none;
+            position: absolute;
+            top: 47%;
+            left: 83%;
+            border-radius: 138px;
+            background: transparent;
+        }
+        #renderContainer button.chooseElem:hover{
+            background-color: #ededed;
+            opacity: .4;
+            }
+        #renderContainer #resultElem1{
+            width: 10%;
+            height: 5vw;
+            position: absolute;
+            top: 33%;
+            left: 42%;
+            text-align: center;
+            font-size: 42px;
+            font-weight: 500;
+            color: #01a8e0;
+        }
+        #renderContainer #resultElem2{
+            width: 10%;
+            height: 5vw;
+            position: absolute;
+            top: 44%;
+            left: 42%;
+            text-align: center;
+            font-size: 42px;
+            font-weight: 500;
+            color: #01a8e0;
+        }
+        .validate-message {
+            position: absolute;
+            left: -40%;
+            bottom: 0;
+            font-size: 3vw;
+            color: #27ae60;
+            width: 40%;
+            height: 6vw;
+            border: 2px solid #27ae60;
+            border-left-width: 10px;
+            display: flex;
+            align-items: center;
+            background-color: #FFF;
+            border-radius: 5px;
+            padding: 14px !important;
+        }
+        #valid-message-text{
+            padding-top: 15px;
+            padding-left: 7px;
+            font-weight: bold;
+        }
+
+
+        @media only screen and (max-width: 600px) {
+            #renderContainer{
+                width: 100%;
+                height: 100vw;
+            }
+            #renderContainer button.chooseElem:first-child{
+                height: 5vw;
+            }
+            #renderContainer button.chooseElem:nth-child(2){
+                height: 5vw;
+            }
+            #renderContainer button.chooseElem:nth-child(3){
+                height: 5vw;
+            }
+            #renderContainer button.chooseElem:nth-child(4){
+                height: 5vw;
+            }
+            #renderContainer #resultElem1 {
+                font-size: 23px;
+            }
+            #renderContainer #resultElem2 {
+                font-size: 23px;
+            }
+            #mice {
+                padding-top:6%;
+            }
+            #mice  .mice-img{
+                width: 23px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 position-relative">
+                <div id="renderContainer">
+                    <button checkvalid="true" forEle1="true" class="chooseElem" >
+                    </button>
+                    <button checkvalid="false" forEle1="false"   class="chooseElem" >
+                    </button>
+                    <button checkvalid="false" forEle2="false" class="chooseElem" >
+                    </button>
+                    <button checkvalid="true" forEle2="true" class="chooseElem" >
+                    </button>
+                    <div class="resultElem" id="resultElem1"></div>
+                    <div class="resultElem" id="resultElem2"></div> 
+                    <div id="mice">
+                        <img src="https://books.knowledgewave.org/math-1/public/images/megaphone.svg" alt="Mice" class="img-fluid mice-img">
+                    </div> 
+                    <div class="validate-message px-2" id="validate-message">
+                        <i id="like-icon" class="fas fa-thumbs-up"></i>
+                        <p id="valid-message-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="https://books.knowledgewave.org/math-1/public/js/waveBooks.js"></script>
+    <script>
+        var initAudio = new Audio('Choose and complete.mp3');
+        initAudio.play();
+        mice.addEventListener('click',()=>{
+            initAudio.play();
+        })
+        var chooseElems = document.querySelectorAll('.chooseElem');
+        chooseElems.forEach(element=>{
+            element.addEventListener('click',()=>{
+            if (element.getAttribute('checkvalid') === "true") {
+                if (element.getAttribute('forEle1')) {
+                    document.getElementById('resultElem1').textContent = 'one';
+                }
+                if (element.getAttribute('forEle2')) {
+                    document.getElementById('resultElem2').textContent = 'two';
+                }
+                checkValidity(true);
+            }else if(element.getAttribute('checkvalid') === "false"){
+                checkValidity(false)
+            }
+            })
+        })
+        
+// const checkValidity = message =>{
+//     if (message === true) {
+//         const items =  [
+//             'https://books.knowledgewave.org/math-1/public/audio/Excellent.mp3' ,
+//             'https://books.knowledgewave.org/math-1/public/audio/Good job.mp3',
+//             'https://books.knowledgewave.org/math-1/public/audio/Super genius.mp3',
+//             ];
+//             let randomNumb = Math.floor(Math.random() * 3);
+//             var item = items[randomNumb];
+//             const itemsMessage =  [
+//             'Excellent' ,
+//             'Good job',
+//             'Super genius'
+//             ];
+//             var itemMessage = itemsMessage[randomNumb];
+//             document.getElementById('valid-message-text').textContent = itemMessage;
+//             document.getElementById('validate-message').style.color = '#27ae60' ;
+//             document.getElementById('validate-message').style.borderColor = '#27ae60' ;
+
+//             document.getElementById('like-icon').classList = 'fas fa-thumbs-up' ;
+//             $("#validate-message").animate({left: '10px'});
+//             var audio = new Audio(item);
+//             audio.play()  
+//     }else if(message === false){
+//         document.getElementById('validate-message').style.color = '#c0392b' ;
+//         document.getElementById('valid-message-text').textContent = 'Please, try again';
+//         document.getElementById('valid-message-text').style.fontSize = '20px';
+//         document.getElementById('validate-message').style.borderColor = '#c0392b' ;
+//         document.getElementById('like-icon').classList = 'fas fa-thumbs-down' ;
+//         $("#validate-message").animate({left: '10px'});
+//         var audio = new Audio('https://books.knowledgewave.org/math-1/public/audio/Please, try again.mp3');
+//         audio.play()   
+//         }
+// }
+    </script>
+</body>
+</html>

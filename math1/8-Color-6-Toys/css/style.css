@@ -1,0 +1,145 @@
+.root{
+    width: 100%;
+    margin: auto;
+    position: relative;
+}
+.root #root-img{
+    height: 80vw;
+}
+.layer-one{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    padding-top: 5px;
+    overflow: hidden;
+}
+#mice{
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    width: 7%;
+    height: 16vw;
+    padding-top: 1%;
+    cursor: pointer;
+}
+#mice img{
+    transform:rotateZ(45deg);
+}
+
+.layer-one span{
+    color: green;
+    font-size: 40px;
+    position: absolute;
+    top: 7%;
+    left: 2%;
+}
+.CM-Words{
+    width: 410px;
+    height: 65px;
+    display: inline-block;
+    cursor: pointer;
+}
+.balooan,.bear ,.Rocket,.Drums,.plane,.train,.Previously,.img-words{
+    width: 28%;
+    height: 28%;
+    transition: 0.5s;
+    position: absolute;
+    cursor: pointer;
+}
+.img-words{
+    top:3%;
+    left: 10%;
+    width: 47%;
+    height: 9%;
+}
+.img-words img{
+    width: 100;
+    height: 100%;
+}
+.balooan{
+    top: 23%;
+    right: 34%;
+}
+.bear{
+    width: 35%;
+    height: 73%;
+    top: 22%;
+    left: 4%;
+}
+.Rocket{
+    top: 43%;
+    right: 30%;
+}
+
+.Drums{
+    top: 64%;
+    right: 40%;
+}
+.plane{
+    width: 35%;
+    height: 43%;
+    top: 25%;
+    right: 2%;
+}
+.Previously{
+    top: 22%;
+    right: 22%;
+}
+.train{
+    width: 39%;
+    height: 30%;
+    top: 65%;
+    right: 7%;
+}
+.Drums img{
+    width: 70%;
+}
+.Rocket img{
+    width: 80%;
+}
+.balooan img{
+    width: 40%;
+}
+.Previously img{
+    width: 45%;
+}
+
+.validate-message {
+    position: absolute;
+    left: -40%;
+    bottom: 2%;
+    font-size: 3vw;
+    color: #27ae60;
+    width: 40%;
+    height: 6vw;
+    border: 2px solid #27ae60;
+    border-left-width: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #FFF;
+    border-radius: 5px;
+    padding: 14px !important;
+}
+#valid-message-text{
+    padding-top: 15px;
+    padding-left: 7px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

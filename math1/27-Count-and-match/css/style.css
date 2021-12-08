@@ -1,0 +1,404 @@
+#mice{
+    font-size: 50px;
+    cursor: pointer;
+    color: green;
+}
+#mice  .mice-img{
+    width: 50px;
+    height: 71px;
+    transform: rotateZ( 
+45deg
+);
+    cursor: pointer;
+    z-index: 184;
+}
+
+.root{
+    width: 70%;
+    margin: auto;
+    position: relative;
+}
+.layer-one{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    padding-top: 5px;
+    overflow: hidden;
+}
+.layer-one span{
+    color: green;
+}
+.CM-Words{
+    width: 410px;
+    height: 65px;
+    display: inline-block;
+    cursor: pointer;
+}
+.rideo,.NumOne ,.recorder,.ice{
+    width: 28%;
+    height: 28%;
+    transition: 0.5s;
+    position: absolute;
+    background:rgba(0,0,0,0.5);
+
+    border-radius: 50%;
+    cursor: pointer;
+}
+.rideo:hover{
+    background:rgba(216, 208, 208, 0.5);
+}
+.rideo{  
+    top: 10%;
+    right: 18%;
+    height: 37%;
+}
+/* .NumOne{
+    top: 32%;
+    left: 12%;
+    height: 20%; */
+/* } */
+.recorder{
+    top: 51%;
+    right: 16%;
+    width: 31%;
+    height: 35%;
+}
+
+/* .ice{
+    top: 57%;
+    left: 12%;
+    height: 20%;
+} */
+.line-rideo,.line-NumOne,.line-recorder,.line-ice{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+
+}
+.line-rideo{
+    top: 55%;
+    left: 4px;
+    background: red;
+}
+.line-NumOne{
+    top: 48%;
+    background: red;
+    left: 90%;
+}
+.line-recorder{
+    top: 63%;
+    left: 5%;
+    background: red;
+}
+.line-ice{
+    top: 45%;
+    right: 3%;
+    background: red;
+}
+
+
+/* .radio{
+    position: absolute;
+    background:rgba(0,0,0,0.5);
+}
+.num-one{
+    position: absolute;
+    background:rgba(0,0,0,0.5);
+}
+.Tape-recorder{
+    position: absolute;
+    background:rgba(0,0,0,0.5);
+}
+.ice-cream {
+    position: absolute;
+    background:rgba(0,0,0,0.5);
+} */
+
+
+.one,.two,.three,.four{
+    width: 22%;
+    height: 14%;
+    /* transition: 0.5s; */
+    position: absolute;
+    background: rgb(0 0 0 / 10%);
+    border-radius: 50%;
+    cursor: pointer;
+    left: 37%;
+}
+.one{
+    top: 22%;
+}
+.two{
+    top: 38%;
+}
+.three{
+    top:56%;
+}
+.four{
+    top: 72%;
+}
+.elemOne,.elemTow,.elemThree,.elemFour{
+    width: 22%;
+    height: 14%;
+    /* transition: 0.5s; */
+    position: absolute;
+    /* background: rgb(0 0 0 / 10%); */
+    border-radius: 50%;
+    cursor: pointer;
+}
+.elemOne{
+    top: 26%;
+    left: 6%;
+    width: 27%;
+    height: 28%;
+}
+.elemTow .matchDot{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    /* background-color: red; */
+    right: 9%;
+    top: 29%;
+}
+.elemThree .matchDot{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    /* background-color: red; */
+    left: 6%;
+    top: 54%;
+}
+.elemFour .matchDot{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    /* background-color: red; */
+    left: 6%;
+    top: 30%;
+}
+.elemOne .matchDot{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    /* background-color: red; */
+    right: 9%;
+    top: 54%;
+}
+.elemTow{
+    top: 56%;
+    left: 6%;
+    width: 27%;
+    height: 34%;
+}
+.elemThree{
+    top: 10%;
+    right: 6%;
+    width: 27%;
+    height: 42%;
+}
+.elemFour{
+    top: 56%;
+    right: 6%;
+    width: 27%;
+    height: 32%
+}
+.one .refFot{
+    width: 20px;
+    height: 20px;
+    /* background-color: red; */
+    border-radius: 50%;
+    position: absolute;
+    left: 0%;
+    top: 50%;
+}
+.two .refFot{
+    width: 20px;
+    height: 20px;
+    /* background-color: red; */
+    border-radius: 50%;
+    position: absolute;
+    left: 0%;
+    top: 50%;
+}
+.three .refFot{
+    width: 20px;
+    height: 20px;
+    /* background-color: red; */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: 0%;
+}
+.four .refFot{
+    width: 20px;
+    height: 20px;
+    /* background-color: red; */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: 0%;
+}
+
+
+
+
+
+
+@media (min-width: 0px) { 
+    .root{
+        width: 100%;
+    }
+    .layer-one span{
+        font-size: 25px;
+       position: absolute;
+       top: 9px;
+    }
+    /* .num-one{
+        width: 150px;
+        height: 70px;
+        top: 140px;
+        left: 90px;
+    }
+    .radio{
+        width: 110px;
+        height: 90px;
+        top: 49px;
+        left: 239px;
+    }
+    .Tape-recorder{
+        width: 110px;
+        height: 70px;
+        top: 150px;
+        left: 290px;
+    } */
+   
+}
+@media (min-width: 576px) { 
+    /* .num-one{
+        width: 100px;
+        height: 160px;
+        top: 140px;
+        left: 159px;;
+    }
+    .radio{
+        width: 90px;
+        height: 120px;
+        top: 49px;
+        left: 299px;
+    }
+    .Tape-recorder{
+        width: 110px;
+        height: 80px;
+        top: 170px;
+        left: 360px;
+    } */
+ }
+
+@media (min-width: 768px) { 
+    .layer-one span{
+        font-size: 45px;
+        
+    }
+    /* .num-one{
+        position: absolute;
+        width: 130px;
+        height: 210px;
+        top: 228px;
+        left: 292px;;
+    }
+    .radio {
+        width: 120px;
+        height: 140px;
+        top: 123px;
+        left: 458px;
+    }
+    .Tape-recorder{
+        width: 190px;
+        height: 120px;
+        top: 289px;
+        left: 579px;
+    } */
+ }
+
+
+@media (min-width: 992px) { 
+    .root{
+        width: 70%;
+    }
+    .layer-one span{
+        font-size: 50px;
+    }
+    /* .num-one{
+        width: 150px;
+        height: 220px;
+        top: 180px;
+        left: 205px;;
+    }
+    .radio{
+        width: 150px;
+        height: 180px;
+        top: 50px;
+        left: 360px;
+    }
+    .Tape-recorder{
+        width: 170px;
+        height: 110px;
+        top: 235px;
+        left: 490px;
+    } */
+ }
+
+
+@media (min-width: 1200px) { 
+    .root{
+        width: 70%;
+    }
+    .layer-one span{
+        font-size: 50px;
+    }
+    /* .num-one{
+        width: 150px;
+        height: 220px;
+        top: 180px;
+        left: 275px;;
+    }
+    .radio{
+        width: 150px;
+        height: 180px;
+        top: 80px;
+        left: 430px;
+    }
+    .Tape-recorder{
+        width: 170px;
+        height: 110px;
+        top: 295px;
+        left: 580px;
+    } */
+ }
+ .validate-message {
+    position: absolute;
+    left: -40%;
+    bottom: 0%;
+    font-size: 3vw;
+    color: #27ae60;
+    width: 40%;
+    height: 6vw;
+    border: 2px solid #27ae60;
+    border-left-width: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #FFF;
+    border-radius: 5px;
+    padding: 14px !important;
+}
+#valid-message-text{
+    padding-top: 15px;
+    padding-left: 7px;
+    font-weight: bold;
+}

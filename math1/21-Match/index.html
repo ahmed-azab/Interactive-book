@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Match</title>
+        <link rel="stylesheet" href="https://books.knowledgewave.org/math-1/public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <style>
+            .page-container{
+                width: 100%;
+                height: auto;
+                position: relative;
+                display: block;
+                margin: auto;
+                overflow: hidden;
+            }
+            .backgroundImageContainer{
+                width: 100%;
+                height: auto;
+            }
+            #mice{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 6%;
+                height: 16vw;
+                padding-top: 8%;
+                cursor: pointer;
+            }
+            #mice img{
+                transform:rotateZ(45deg);
+            }
+            .validate-message {
+                position: absolute;
+                left: -40%;
+                bottom: 0;
+                font-size: 3vw;
+                color: #27ae60;
+                width: 40%;
+                height: 6vw;
+                border: 2px solid #27ae60;
+                border-left-width: 10px;
+                display: flex;
+                align-items: center;
+                background-color: #FFF;
+                border-radius: 5px;
+                padding: 14px !important;
+            }
+            #valid-message-text{
+                padding-top: 15px;
+                padding-left: 7px;
+                font-weight: bold;
+            }
+            /* page content */
+            .page-content .match{
+                position: absolute;
+                width: 14.7%;
+                height: 10.5%;
+                text-align: center;
+                background-color:transparent;
+                font-size: 6vw;
+                border-radius: 15%;
+                border: none;
+                outline: none;
+                cursor: pointer;
+            }
+            .match-dot{
+                width: 12%;
+                height: 10%;
+                background-color: transparent;
+            }
+            .page-content .match:first-child{
+                top: 21%;
+                left: 11%;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+            }
+            .page-content .match:nth-child(2){
+                top: 21%;
+                left: 26.7%;             
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+            }
+            .page-content .match:nth-child(3){
+                top: 21%;
+                left: 42%;   
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+            }
+            .page-content .match:nth-child(4){
+                top: 21%;
+                left: 57.9%;              
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+            }
+            .page-content .match:nth-child(5){
+                top: 51%;
+                left: 9%;
+                height: 45%;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+            }
+            .page-content .match:nth-child(6){
+                top: 51%;
+                left: 25.7%;
+                height: 45%;              
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+            }
+            .page-content .match:nth-child(7){
+                top: 51%;
+                left: 40.7%;
+                height: 45%;            
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+            }
+            .page-content .match:nth-child(8){
+                top: 51%;
+                left: 56.7%;
+                height: 45%;                
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+            }
+
+            @media only screen and (max-width: 768px) {
+                .backgroundImageContainer{
+                    height: 75vw;
+                }
+            }
+            @media only screen and (max-width: 600px) {
+                .backgroundImageContainer{
+                    height: 75vw;
+                }
+                #mice{
+                    padding-top: 8%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page-container">
+            <img src="images/1.jpg" alt="Background Image" class="backgroundImageContainer" />
+            <div id="mice">
+                <!-- Add A Shared Image Link -->
+                <img src="https://books.knowledgewave.org/math-1/public/images/megaphone.svg" alt="Mice" class="img-fluid">
+            </div>
+            <div class="page-content">
+                <div class="match" validValue="17" validFor="17" >
+                    <span class="match-dot"></span>
+                </div>
+                <div class="match" validValue="18" validFor="18" >
+                    <span class="match-dot"></span>
+                </div>
+                <div class="match" validValue="19" validFor="19">
+                    <span class="match-dot"></span>
+                </div>
+                <div class="match" validValue="20" validFor="20">
+                    <span class="match-dot"></span>
+                </div>
+                <div class="match" validValue="19" validFor="19">
+                    <span class="match-dot"></span>
+                </div>
+                <div class="match" validValue="17" validFor="17" >
+                    <span class="match-dot"></span>
+                </div>
+                <div class="match" validValue="20" validFor="20" >
+                    <span class="match-dot"></span>
+                </div>
+                <div class="match" validValue="18" validFor="18">
+                    <span class="match-dot"></span>
+                </div>
+            </div>
+            <div class="validate-message px-2 py-2" id="validate-message">
+                <i id="like-icon" class="fas fa-thumbs-up"></i>
+                <p id="valid-message-text"> Good Jpb</p>
+            </div>
+        </div>
+        <script src="https://books.knowledgewave.org/math-1/public/js/jquery-3.2.1.min.js"></script>
+        <script src="https://books.knowledgewave.org/math-1/public/js/leader-line.min.js"></script>
+        <script src="https://books.knowledgewave.org/math-1/public/js/waveBooks.js"></script>
+        <script>
+            mice.addEventListener('click',()=>{
+            let initAudio = new Audio('Audio/Count and match.mp3');
+            initAudio.play();
+        })
+        let refElem =null;
+        let matchElem =null;
+        document.querySelectorAll('.match').forEach((elem)=>{
+            elem.addEventListener('click',(e)=>{
+                if (refElem) {
+                    matchElem = elem;
+                }else{
+                    refElem = elem;
+                }
+                if (refElem !== null && matchElem !== null && refElem !== matchElem) {
+                    if (refElem.getAttribute('validFor') == matchElem.getAttribute('validValue')) {
+                        console.log(refElem.getAttribute('validFor')  , matchElem.getAttribute('validValue') );
+                        initMatch(refElem.childNodes[1] , elem.childNodes[1] , true);
+                        refElem = null;                    matchElem = null;
+                    }else{
+                        console.log(matchElem  , refElem );
+                        initMatch(refElem.childNodes[1] , elem.childNodes[1] , false);
+                        matchElem = null;   refElem = null;  
+                    }
+                }
+            })
+        })
+
+        let initMatch = ( refEle , toEle , message ) =>{
+            if (message === true) {
+                let myLine = new LeaderLine(
+                    refEle,
+                    toEle,
+                    {hide: true,
+                    color: 'green'},
+                    );
+                    myLine.show( 'draw', {duration:500,timing:[0.58, 0, 0.42, 1]});
+                    checkValidity(true)
+            }else if(message === false ){
+                let myLine = new LeaderLine(
+                    refEle,
+                    toEle,
+                    {hide: true,
+                    color: 'red'},
+                    );
+                    myLine.show( 'draw', {duration:500,timing:[0.58, 0, 0.42, 1]});
+                    setTimeout(()=>{
+                        myLine.hide()
+                    },1000)
+                    checkValidity(false)
+            }
+        }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Count and match</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+            <link rel="stylesheet" href="css/kursor.css">
+          <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+
+
+        <div class="root">
+            
+            <img class="img-fluid"   src="images/27.jpg">
+            <div class="layer-one">
+              
+                <div id="mice">
+                    <img src="https://books.knowledgewave.org/math-1/public/images/megaphone.svg" alt="Mice" class="img-fluid mice-img">
+                    <div class="CM-Words">
+
+                    </div>
+                </div>
+                <div  class="one ref">
+                    <div class="refFot" id="ref2" ></div>
+                </div>
+                <div class="two ref" >
+                    <div class=" refFot" id="ref4"></div>
+                </div>
+                <div  class="three ref">
+                    <div class="refFot" id="ref3" ></div>
+                </div>
+                <div class="four ref" >
+                    <div class="refFot" id="ref1"></div>
+                </div>
+                <div class="elemOne matchElem" validFoe="ref2">
+                    <div class="matchDot"></div>
+                </div>
+                <div class="elemTow matchElem" validFoe="ref4">
+                    <div class="matchDot"></div>
+                </div>
+                <div class="elemThree matchElem" validFoe="ref3">
+                    <div class="matchDot"></div>
+                </div>
+                <div class="elemFour matchElem" validFoe="ref1">
+                    <div class="matchDot"></div>
+                </div>
+                <!-- <div class="rideo one" validFoe="ref2">
+                    <div class="line-rideo"></div>
+                </div>
+
+                <div class="recorder one" validFoe="ref1">
+                    <div class="line-recorder"></div>
+                </div> -->
+                <div class="validate-message px-2 py-2" id="validate-message">
+                    <i id="like-icon" class="fas fa-thumbs-up"></i>
+                    <p id="valid-message-text"> Good Jpb</p>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/leader-line.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="https://books.knowledgewave.org/math-1/public/js/waveBooks.js"></script>
+        <script>
+            let myAudio1 = new Audio('Audio/Count and match.mp3');
+            myAudio1.play();
+            mice.addEventListener('click',()=>{
+                myAudio1.play();
+            })
+
+            let refElem ;
+
+
+            document.querySelectorAll('.ref').forEach((elem)=>{
+                elem.addEventListener('click',(e)=>{
+                    refElem = elem.childNodes[1];
+                    if (refElem) {
+                        console.log(refElem.id);
+                    }
+                })
+            })
+
+
+
+        document.querySelectorAll('.matchElem').forEach((elem)=>{
+        elem.addEventListener('click',(e)=>{
+            if (refElem) {
+                if (elem.getAttribute('validFoe') == refElem.id) {
+                    checkValidityMatch(true,refElem,elem.childNodes[1])
+                    checkValidity(true)
+                }else if(elem.getAttribute('validFoe') !== elem.childNodes[1].id){
+                    checkValidityMatch(false,refElem,elem.childNodes[1])
+                    checkValidity(false)
+                }   
+            }
+        })
+    })
+
+        </script>
+    </body>
+</html>

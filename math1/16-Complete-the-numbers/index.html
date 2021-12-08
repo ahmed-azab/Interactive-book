@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>What comes after</title>
+        <link rel="stylesheet" href="https://books.knowledgewave.org/math-1/public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <style>
+            .page-container{
+                width: 100%;
+                height: auto;
+                position: relative;
+                display: block;
+                margin: auto;
+                overflow: hidden;
+            }
+            .backgroundImageContainer{
+                width: 100%;
+                height: auto;
+            }
+            #mice{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 6%;
+                height: 16vw;
+                padding-top: 5%;
+                cursor: pointer;
+            }
+            #mice img{
+                transform:rotateZ(45deg);
+            }
+            .validate-message {
+                position: absolute;
+                left: -40%;
+                bottom: 2%;
+                font-size: 3vw;
+                color: #27ae60;
+                width: 40%;
+                height: 6vw;
+                border: 2px solid #27ae60;
+                border-left-width: 10px;
+                display: flex;
+                align-items: center;
+                background-color: #FFF;
+                border-radius: 5px;
+                padding: 14px !important;
+            }
+            #valid-message-text{
+                padding-top: 15px;
+                padding-left: 7px;
+                font-weight: bold;
+            }
+            /* page content */
+            .page-content .text-box{
+                position: absolute;
+                width: 7%;
+                height: 9%;
+                text-align: center;
+                background-color: transparent;
+                font-size: 7vw;
+                border-radius: 5px;
+                border: none;
+                outline: none;
+            }
+            .page-content .text-box:first-child{
+                top: 18%;
+                left: 38.5%;
+            }
+            .page-content .text-box:nth-child(2){
+                top: 18%;
+                left:47.5%;
+            }
+            .page-content .text-box:nth-child(3){
+                top: 18%;
+                left: 65.7%;
+            }
+            .page-content .text-box:nth-child(4){
+                top: 18%;
+                left: 74.8%;
+            }
+
+            .page-content .image-replace{
+                position: absolute;
+                width: 7.5%;
+                height: 10%;
+                text-align: center;
+                background-color: transparent;
+                font-size: 6vw;
+                border: none;
+                outline: none;
+            }
+            .page-content .image-replace1{
+                top: 39.5%;
+                left: 72.2%;
+                width: 21%;
+                height: 41%;
+            }
+            .page-content .image-replace2{
+                top: 39.5%;
+                left: 56.5%;
+                width: 20%;
+                height: 40%;
+            }
+            .page-content .image-replace3{
+                top: 42.5%;
+                left: 39%;
+                width: 20%;
+                height: 38%;
+            }
+            .page-content .image-replace4{
+                top: 49.5%;
+                left: 26%;
+                width: 22%;
+                height: 34%;
+            }
+            .page-content .image-replace img{
+                display: none;
+                /* position: relative; */
+                /* z-index: 986468; */
+            }
+            @media only screen and (max-width: 768px) {
+                .backgroundImageContainer{
+                    height: 75vw;
+                }
+            }
+            @media only screen and (max-width: 600px) {
+                .backgroundImageContainer{
+                    height: 75vw;
+                }
+                #mice{
+                    padding-top: 4%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page-container">
+            <img src="images/2-12.jpg" alt="Background Image" class="backgroundImageContainer" />
+            <div id="mice">
+                <!-- Add A Shared Image Link -->
+                <img src="https://books.knowledgewave.org/math-1/public/images/megaphone.svg" alt="Mice" class="img-fluid">
+            </div>
+            <div class="page-content">
+                <input class="text-box" validValue="2"/>
+                <input class="text-box" validValue="3"/>
+                <input class="text-box" validValue="5"/>
+                <input class="text-box" validValue="6"/>
+                <div class="image-replace image-replace1" validValue="true" forcounter="1">
+                    <img id="plane-img image-toggle" src="images/40-01.png" class="imageToReplace w-100 h-100" replaceTo="images/Ex-11.png">
+                </div>
+                <div class="image-replace image-replace2" validValue="true" forcounter="1">
+                    <img id="plane-img image-toggle" src="images/40-03.png" class="imageToReplace w-100 h-100" replaceTo="images/Ex-11.png">
+                </div>
+                <div class="image-replace image-replace3" validValue="true" forcounter="1">
+                    <img id="plane-img image-toggle" src="images/40-05.png" class="imageToReplace w-100 h-100" replaceTo="images/Ex-11.png">
+                </div>
+                <div class="image-replace image-replace4" validValue="true" forcounter="1">
+                    <img id="plane-img image-toggle" src="images/40-08.png" class="imageToReplace w-100 h-100" replaceTo="images/Ex-11.png">
+                </div>
+            </div>
+            <div class="validate-message px-2 py-2" id="validate-message">
+                <i id="like-icon" class="fas fa-thumbs-up"></i>
+                <p id="valid-message-text"> Good Jpb</p>
+            </div>
+        </div>
+        <script src="https://books.knowledgewave.org/math-1/public/js/jquery-3.2.1.min.js"></script>
+        <script src="https://books.knowledgewave.org/math-1/public/js/waveBooks.js"></script>
+        <script>
+        mice.addEventListener('click',()=>{
+            let initAudio = new Audio('Audio/Complete the missing numbers.mp3');
+            initAudio.play();
+        })
+            initValidation('.text-box')
+            document.querySelectorAll('.image-replace').forEach(image=>{
+                image.addEventListener('click',()=>{
+                    image.childNodes[1].style.display = 'block';
+                    checkValidity(true)
+                })
+            })
+        </script>
+    </body>
+</html>

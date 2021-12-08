@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Colour the pictures with the A sound</title>
+        <link rel="stylesheet" href="https://books.knowledgewave.org/math-1/public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <style>
+            .page-container{
+                width: 100%;
+                height: auto;
+                position: relative;
+                display: block;
+                margin: auto;
+                overflow: hidden;
+            }
+            .backgroundImageContainer{
+                width: 100%;
+                height: auto;
+            }
+            #mice{
+                position: absolute;
+                top: -6%;
+                left: 0;
+                width: 6%;
+                height: 16vw;
+                padding-top: 8%;
+                cursor: pointer;
+            }
+            #mice img{
+                transform:rotateZ(45deg);
+            }
+            .validate-message {
+                position: absolute;
+                left: -40%;
+                bottom: 2%;
+                font-size: 3vw;
+                color: #27ae60;
+                width: 40%;
+                height: 6vw;
+                border: 2px solid #27ae60;
+                border-left-width: 10px;
+                display: flex;
+                align-items: center;
+                background-color: #FFF;
+                border-radius: 5px;
+                padding: 14px !important;
+            }
+            #valid-message-text{
+                padding-top: 15px;
+                padding-left: 7px;
+                font-weight: bold;
+            }
+            /* page content */
+            .page-content .circle-btn{
+                position: absolute;
+                width: 22%;
+                height: 33%; 
+                text-align: center;            
+                font-size: 6vw;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                background:transparent;
+            }
+            
+            .page-content .circle-btn:first-child{    
+                top: 4%;
+                left: 7.7%;
+                width: 76%;
+                height: 11%;
+            }
+            /* Fish */
+            .page-content .circle-btn:nth-child(2){
+                width: 17%;
+                height: 22%;
+                top: 20.1%;
+                left: 13%;
+                border-radius: 40%;                        
+            }
+            .page-content .circle-btn:nth-child(3){
+                top: 44.1%;
+                left: 12%;
+                border-radius: 40%;        
+            }
+            .page-content .circle-btn:nth-child(4){                          
+                top: 20.1%;
+                left: 34%;
+                width: 25%;
+                height: 36%;
+                border-radius: 40%; 
+            }
+            .page-content .circle-btn:nth-child(5){
+                top: 20.1%;
+                left: 59%;
+                width: 12%;
+                border-radius: 24%; 
+            }
+            .page-content .circle-btn:nth-child(6){                       
+                top: 15.1%;
+                left: 71%;
+                width: 25%;
+                height: 38%;
+                border-radius: 40%;
+            }
+            .page-content .circle-btn:nth-child(7){             
+                top: 57.1%;
+                left: 34%;
+                width: 27%;
+                height: 36%;
+                border-radius: 40%; 
+            }
+            .page-content .circle-btn:nth-child(8){             
+                top: 53.1%;
+                left: 61%;
+                width: 27%;
+                height: 36%;
+                border-radius: 40%; 
+            }
+
+           
+           
+            .circle-btn #img-content{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0%;
+                left: 0;
+            }
+            .page-container #root{
+               height: 70vw;
+           }
+           
+            
+            @media only screen and (max-width: 768px) {
+                .backgroundImageContainer{
+                    height: 75vw;
+                }
+            }
+            @media only screen and (max-width: 600px) {
+                .backgroundImageContainer{
+                    height: 75vw;
+                }
+                #mice{
+                    padding-top: 8%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page-container">
+            <img id="root" src="images/1.png" alt="Background Image" class="backgroundImageContainer" />
+            <div id="mice">
+                <!-- Add A Shared Image Link -->
+                <img src="https://books.knowledgewave.org/math-1/public/images/megaphone.svg" alt="Mice" class="img-fluid">
+            </div>
+            <div class="page-content">
+                <div class="circle-btn "  >
+                    <img id="img-content" class="img-fluid" src="images/2.png">
+                </div>
+           
+
+                <!-- fish -->
+                <div id="o" class="circle-btn image-replace"  forcounter="2" >
+                    <img id="img-content"  replaceTo="images/o-c.png" class="img-fluid" src="images/o.png">
+                </div>
+                <div id="e" class="circle-btn image-replace"  forcounter="2" >
+                    <img id="img-content"  replaceTo="images/e-c.png" class="img-fluid" src="images/e.png">
+                </div>
+                <div id="aa" class="circle-btn image-replace"  forcounter="1" >
+                    <img id="img-content"  replaceTo="images/aa-c.png" class="img-fluid" src="images/aa.png">
+                </div>
+                <div id="i" class="circle-btn image-replace"  forcounter="2" >
+                    <img id="img-content"  replaceTo="images/i-c.png" class="img-fluid" src="images/i.png">
+                </div>
+                <div id="u" class="circle-btn image-replace"  forcounter="2" >
+                    <img id="img-content"  replaceTo="images/u-c.png" class="img-fluid" src="images/u.png">
+                </div>
+                <div id="oo" class="circle-btn image-replace"  forcounter="2" >
+                    <img id="img-content"  replaceTo="images/oo-c.png" class="img-fluid" src="images/oo.png">
+                </div>
+                <div id="a" class="circle-btn image-replace"  forcounter="1" >
+                    <img id="img-content"  replaceTo="images/a-c.png" class="img-fluid" src="images/a.png">
+                </div>
+
+
+              
+
+
+
+            </div>
+            <div class="validate-message px-2 py-2" id="validate-message">
+                <i id="like-icon" class="fas fa-thumbs-up"></i>
+                <p id="valid-message-text"> Good Jpb</p>
+            </div>
+        </div>
+        <script src="https://books.knowledgewave.org/math-1/public/js/jquery-3.2.1.min.js"></script>
+        <script src="https://books.knowledgewave.org/math-1/public/js/waveBooks.js"></script>
+        <script>
+            mice.addEventListener('click',()=>{
+            let initAudio = new Audio('Audio/Circle, and colour, the short vowel a..mp3');
+            initAudio.play();
+        })
+      
+        let counter1 = 0;
+            let counter2 = 0;
+            document.querySelectorAll('.image-replace').forEach(image=>{
+                image.addEventListener('click',()=>{
+                    if (image.getAttribute('forcounter') === '1') {
+                        if (counter1 >= 12 ) {
+                            checkValidity(false)
+                        }else{
+                            if (image.childNodes[1].src !== image.childNodes[1].getAttribute('replaceTo')) {
+                                image.childNodes[1].src = image.childNodes[1].getAttribute('replaceTo');
+                                checkValidity(true)
+                                counter1 ++;   
+                            }
+                        }
+                    }else if(image.getAttribute('forcounter') === '2'){
+                        if (counter2 >= 0 ) {
+                            checkValidity(false)
+                        }else{
+                            image.childNodes[1].style.display = 'block';
+                            image.childNodes[1].src = image.childNodes[1].getAttribute('replaceTo');
+                            checkValidity(true)
+                            counter2 ++;
+                        }
+                    }
+                })
+            })
+            
+            var a = document.getElementById("a");
+        a.addEventListener('click',()=>{
+            a.style.cssText='border: 3px solid green';
+        })
+        var aa = document.getElementById("aa");
+        aa.addEventListener('click',()=>{
+            aa.style.cssText='border: 3px solid green';
+        })
+        // var oo = document.getElementById("oo");
+        // oo.addEventListener('click',()=>{
+        //     oo.style.cssText='border: 3px solid green';
+        // })
+        // var i = document.getElementById("i");
+        // i.addEventListener('click',()=>{
+        //     i.style.cssText='border: 3px solid green';
+        // })
+        // var o = document.getElementById("o");
+        // o.addEventListener('click',()=>{
+        //     o.style.cssText='border: 3px solid green';
+        // })
+        // var e = document.getElementById("e");
+        // e.addEventListener('click',()=>{
+        //     e.style.cssText='border: 3px solid green';
+        // })
+        // var u = document.getElementById("u");
+        // u.addEventListener('click',()=>{
+        //     u.style.cssText='border: 3px solid green';
+        // })
+        initValidation('.interNum')
+        </script>
+    </body>
+</html>

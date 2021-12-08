@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Circle all the  words that match the picture</title>
+        <link rel="stylesheet" href="https://books.knowledgewave.org/math-1/public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <style>
+            .page-container{
+                width: 100%;
+                height: auto;
+                position: relative;
+                display: block;
+                margin: auto;
+                overflow: hidden;
+            }
+            .backgroundImageContainer{
+                width: 100%;
+                height: auto;
+                margin-top: 10%;
+            }
+            #mice{
+                position: absolute;
+                top: -11%;
+                left: 0;
+                width: 6%;
+                height: 16vw;
+                padding-top: 8%;
+                cursor: pointer;
+            }
+            #mice img{
+                transform:rotateZ(45deg);
+            }
+            .validate-message {
+                position: absolute;
+                left: -40%;
+                bottom: 2%;
+                font-size: 3vw;
+                color: #27ae60;
+                width: 40%;
+                height: 6vw;
+                border: 2px solid #27ae60;
+                border-left-width: 10px;
+                display: flex;
+                align-items: center;
+                background-color: #FFF;
+                border-radius: 5px;
+                padding: 14px !important;
+            }
+            #valid-message-text{
+                padding-top: 15px;
+                padding-left: 7px;
+                font-weight: bold;
+            }
+            /* page content */
+            .page-content .circle-btn{
+                position: absolute;
+                width: 11.8%;
+                height: 27%;
+                border-radius: 59%;    
+                text-align: center;            
+                font-size: 6vw;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                background: transparent;
+                clip-path: polygon(35% 2%, 60% 2%, 100% 35%, 100% 70%, 60% 100%, 35% 100%, 2% 70%, 2% 35%);
+
+                
+            }
+            .page-content .circle-bt{   
+                position: absolute; 
+                top: 7.4%;
+                left: 9%;
+                width: 55%;
+                height: 23%;
+                background: transparent;
+            }
+            .page-content .circle-btn:first-child{    
+                top: 7.4%;
+                left: 9%;
+                width: 55%;
+                border-radius: unset;
+                height: 23%;
+                clip-path:unset
+            }
+            .page-content .circle-btn:nth-child(2){                          
+                top: 33.4%;             
+                left: 46.4%;
+            }
+
+           
+            .page-content .circle-btn:nth-child(3){                             
+                top: 33.4%;
+                left: 63%;
+            }
+            .page-content .circle-btn:nth-child(4){
+                top: 33.4%;
+                left: 28.8%;
+            }
+
+            
+            .page-content .circle-btn:nth-child(5){              
+                top: 33.4%;
+                left: 80.9%;
+            }
+            .page-content .circle-btn:nth-child(6){              
+                top: 64.4%;
+                left: 27.9%;
+            }
+
+
+            
+            .page-content .circle-btn:nth-child(7){              
+                top: 64.5%;
+                left: 45.4%;
+                
+            }
+            .page-content .circle-btn:nth-child(8){           
+                top: 64.5%;
+                left: 63.3%;
+            }
+            .page-content .circle-btn:nth-child(9){           
+                top: 64.5%;
+                left: 81.3%;
+            }
+
+            
+           
+           
+           
+           
+           
+           
+           
+            
+          
+           
+            .eleTogel img{
+                position: absolute;
+                top: 19%;
+                left: 17%;
+                width: 65%;
+            }
+           
+            
+            @media only screen and (max-width: 768px) {
+                .backgroundImageContainer{
+                    height: auto;
+                }
+            }
+            @media only screen and (max-width: 600px) {
+                .backgroundImageContainer{
+                    height: auto;
+                }
+                #mice{
+                    padding-top: 8%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page-container">
+            <img src="images/1.png" alt="Background Image" class="backgroundImageContainer" />
+            <div id="mice">
+                <!-- Add A Shared Image Link -->
+                <img src="https://books.knowledgewave.org/math-1/public/images/megaphone.svg" alt="Mice" class="img-fluid">
+            </div>
+            <div class="page-content">
+                <!-- frist -->
+                <div class="circle-bt">
+                    <img class="img-fluid" src="images/2.png">
+                </div>
+
+
+
+
+
+                <div class="circle-btn eleTogel"  validValue="false"></div>
+                <div class="circle-btn eleTogel"  validValue="false"></div>
+                
+                
+                
+                <div class="circle-btn eleTogel"  validValue="true"></div>
+                <div class="circle-btn eleTogel"  validValue="true"></div>
+                <div class="circle-btn eleTogel"  validValue="false"></div>
+
+
+                <div class="circle-btn eleTogel"  validValue="false"></div>
+                <div class="circle-btn eleTogel"  validValue="true"></div>
+                <div class="circle-btn eleTogel"  validValue="false"></div>
+                
+                
+            
+               
+             
+                
+            </div>
+            <div class="validate-message px-2 py-2" id="validate-message">
+                <i id="like-icon" class="fas fa-thumbs-up"></i>
+                <p id="valid-message-text"> Good Jpb</p>
+            </div>
+        </div>
+        <script src="https://books.knowledgewave.org/math-1/public/js/jquery-3.2.1.min.js"></script>
+        <script src="https://books.knowledgewave.org/math-1/public/js/waveBooks.js"></script>
+        <script>
+            mice.addEventListener('click',()=>{
+            let initAudio = new Audio('Audio/Circle all the words, that match the picture, in each row.mp3');
+            initAudio.play();
+        })
+     
+            // add custome effect 
+            document.querySelectorAll('.eleTogel').forEach(
+                item=>{
+                    item.addEventListener('click',function(){
+                        if(item.getAttribute('validValue') == "true"){
+                            checkValidity (true) 
+                            item.style.cssText='border: 3px solid green';
+                        }else if (item.getAttribute("validValue") == "false"){
+                            checkValidity(false)
+                            item.style.cssText='border: 3px solid red';
+                            setTimeout(function()
+{   item.style.cssText='item.style.cssText="border: 5px solid rgba(255, 255, 255, 0);transition:1s"'; }, 1500);
+                        }
+                    
+
+                    })
+                }
+            )
+
+            // var oo = document.getElementById("oo");
+        // oo.addEventListener('click',()=>{
+        //     oo.style.cssText='border: 3px solid green';
+        // })
+        </script>
+    </body>
+</html>
